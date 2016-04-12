@@ -18,7 +18,10 @@
     "watch:sass": "onchange ./styles/*.scss -- npm run css",
     "watch:js": "onchange ./js/src/*.js -- npm run js",
     "watch:image": "onchange ./images/src/* -- npm run imagemin",
-    "watch": "parallelshell 'npm run server' 'npm run watch:sass' 'npm run watch:js' 'npm run watch:image'"
+    "watch": "parallelshell 'npm run server' 'npm run watch:sass' 'npm run watch:js' 'npm run watch:image'",
+    "modernizr:dev": "node_modules/modernizr/bin/modernizr -c node_modules/modernizr/lib/config-all.json -d js/src/modernizr.js",
+    "modernizr:prod": "node_modules/modernizr/bin/modernizr -c node_modules/modernizr/lib/config-all.json -d js/src/modernizr.js",
+    "postinstall": "if [ -z \"$npm_config_production\" ]; then npm run modernizr:prod; else npm run modernizr:dev; fi"
   },
   "repository": {
     "type": "git",
@@ -32,6 +35,7 @@
   "homepage": "https://github.com/IIP-Design/corona#readme",
   "devDependencies": {
     "autoprefixer": "^6.3.6",
+    "browser-sync": "^2.12.1",
     "eslint": "^2.7.0",
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-jsx-a11y": "^0.6.2",
@@ -42,5 +46,9 @@
     "parallelshell": "^2.0.0",
     "postcss-cli": "^2.5.1",
     "uglify-js": "^2.6.2"
+  },
+  "dependencies": {
+    "modernizr": "^3.3.1",
+    "normalize-css": "^2.3.1"
   }
 }

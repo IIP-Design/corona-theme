@@ -1,3 +1,5 @@
+js/dist
+images/dist
 node_modules/
 .DS_Store
 .sass-cache/

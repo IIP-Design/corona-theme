@@ -1,0 +1,46 @@
+{
+  "name": "corona",
+  "version": "0.0.1",
+  "description": " A base Wordpress installation",
+  "main": "index.php",
+  "scripts": {
+    "sass:ltr": "node-sass --output-style compressed style.scss > style.css",
+    "sass:rtl": "node-sass --output-style compressed rtl.scss > rtl.css",
+    "sass": "npm run sass:ltr && npm run sass:rtl",
+    "autoprefixer": "postcss -m -u autoprefixer --autoprefixer.browsers '> 5%' style.css -o style.css",
+    "css": "npm run sass && npm run autoprefixer",
+    "eslint": "eslint js/src/** --quiet -o js/dist/errors.txt; exit 0",
+    "uglify": "uglifyjs js/src/*.js -o js/dist/script.js",
+    "js": "npm run eslint && npm run uglify",
+    "preimagemin": "rm -rf images/dist",
+    "imagemin": "imagemin images/src/* images/dist",
+    "server": "browser-sync start --proxy 'corona.dev' --files './*.php' 'template-parts/*.php' 'inc/*.php' 'style.css' 'rtl.css' 'images/dist/*' 'js/dist/*.js'",
+    "watch:sass": "onchange ./styles/*.scss -- npm run css",
+    "watch:js": "onchange ./js/src/*.js -- npm run js",
+    "watch:image": "onchange ./images/src/* -- npm run imagemin",
+    "watch": "parallelshell 'npm run server' 'npm run watch:sass' 'npm run watch:js' 'npm run watch:image'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IIP-Design/corona.git"
+  },
+  "author": "Office of Design, U.S. Department of State",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/IIP-Design/corona/issues"
+  },
+  "homepage": "https://github.com/IIP-Design/corona#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "eslint": "^2.7.0",
+    "eslint-config-airbnb": "^7.0.0",
+    "eslint-plugin-jsx-a11y": "^0.6.2",
+    "eslint-plugin-react": "^4.3.0",
+    "imagemin-cli": "^2.1.0",
+    "node-sass": "^3.4.2",
+    "onchange": "^2.3.0",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^2.5.1",
+    "uglify-js": "^2.6.2"
+  }
+}

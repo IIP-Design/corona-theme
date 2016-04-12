@@ -15,13 +15,11 @@
     "preimagemin": "rm -rf images/dist",
     "imagemin": "imagemin images/src/* images/dist",
     "server": "browser-sync start --proxy 'corona.dev' --files './*.php' 'template-parts/*.php' 'inc/*.php' 'style.css' 'rtl.css' 'images/dist/*' 'js/dist/*.js'",
-    "watch:sass": "onchange ./styles/*.scss -- npm run css",
+    "watch:sass": "onchange ./styles/*.scss ./style.scss ./rtl.scss -- npm run css",
     "watch:js": "onchange ./js/src/*.js -- npm run js",
     "watch:image": "onchange ./images/src/* -- npm run imagemin",
     "watch": "parallelshell 'npm run server' 'npm run watch:sass' 'npm run watch:js' 'npm run watch:image'",
-    "modernizr:dev": "node_modules/modernizr/bin/modernizr -c node_modules/modernizr/lib/config-all.json -d js/src/modernizr.js",
-    "modernizr:prod": "node_modules/modernizr/bin/modernizr -c node_modules/modernizr/lib/config-all.json -d js/src/modernizr.js",
-    "postinstall": "if [ -z \"$npm_config_production\" ]; then npm run modernizr:prod; else npm run modernizr:dev; fi"
+    "modernizr:dev": "node_modules/modernizr/bin/modernizr -c node_modules/modernizr/lib/config-all.json -d js/src/modernizr.dev.js"
   },
   "repository": {
     "type": "git",

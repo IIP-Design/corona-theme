@@ -5,3 +5,4 @@ node_modules/
 .sass-cache/
 npm-debug.log
 vendor/
+styles/_style-deprecated.scss

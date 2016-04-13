@@ -8,8 +8,19 @@ Version: 0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: corona
-
 */
 
+@import 'styles/variables';
+@import 'styles/mixins';
 @import 'styles/base';
-@import 'styles/style';
+@import 'styles/layouts/content-sidebar';
+@import 'styles/layouts/sidebar-content';
+@import 'styles/modules/caption';
+@import 'styles/modules/comment';
+@import 'styles/modules/gallery';
+@import 'styles/modules/navigation';
+@import 'styles/modules/post';
+@import 'styles/modules/sidebar';
+@import 'styles/modules/widget';
+@import 'styles/helper';
+@import 'styles/accessibility';

@@ -41,10 +41,12 @@
 			endif; ?>
 		</div><!-- .title-area -->
 
-		<aside class="header-widget-area">
-    		<section class="widget"></section>
-    		<section class="widget"></section>
-    	</aside><!-- .header-widget-area -->
+		<?php 
+			// only show if widgets are assigned to it
+			if( is_active_sidebar( 'header-right') ) {
+				dynamic_sidebar( 'header-right' );
+			}
+		?><!-- .header right widget area -->
 
 	</header><!-- #masthead -->
 

@@ -13,9 +13,8 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div class="content-sidebar-wrap">
+		<main id="main" class="content" role="main">
 
 		<?php
 		if ( have_posts() ) :
@@ -49,8 +48,13 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
 
+		<?php  dynamic_sidebar( 'sidebar-primary' ); ?><!-- primary sidebar -->
+
+
+	</div><!-- .content-sidebar-wrap -->
+	
+	<?php  dynamic_sidebar( 'sidebar-secondary' ); ?><!-- secondary sidebar -->
 <?php
-get_sidebar();
+
 get_footer();

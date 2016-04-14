@@ -21,11 +21,11 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
+<div class="site-container">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'corona' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
+		<div class="title-area">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -36,15 +36,41 @@
 
 			$description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+				<h2 class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></h2>
 			<?php
 			endif; ?>
-		</div><!-- .site-branding -->
+		</div><!-- .title-area -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'corona' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
+		<aside class="header-widget-area">
+    		<section class="widget"></section>
+    		<section class="widget"></section>
+    	</aside><!-- .header-widget-area -->
+
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<nav class="nav-primary" role="navigation">
+		<button class="menu-toggle" aria-controls="menu-primary" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'corona' ); ?></button>
+		<?php 
+ 			$args = array(
+ 				'theme_location' => 'primary',
+ 				'menu_id'=> 'menu-primary',
+ 				'menu_class'=> 'menu nav-menu menu-primary',
+ 				'container_class' => 'wrap'
+ 			);
+			wp_nav_menu( $args );
+		?>
+    </nav><!-- .nav-primary-->
+    
+    <nav class="nav-secondary" role="navigation">
+    	<?php 
+ 			$args = array(
+ 				'theme_location' => 'secondary',
+ 				'menu_id'=> 'menu-secondary',
+ 				'menu_class'=> 'menu nav-menu menu-secondary',
+ 				'container_class' => 'wrap'
+ 			);
+			wp_nav_menu( $args );
+		?>
+    </nav><!-- .nav-secondary-->
+
+	<div id="content" class="site-inner">

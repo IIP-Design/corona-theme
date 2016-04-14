@@ -7,11 +7,11 @@
  * @package corona
  */
 
-if ( ! is_active_sidebar( 'sidebar-primary' ) ) {
+if ( ! is_active_sidebar( 'sidebar-secondary' ) ) {
 	return;
 }
 ?>
 
-<aside id="primary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-primary' ); ?>
+<aside id="secondary" class="widget-area" role="complementary">
+	<?php dynamic_sidebar( 'sidebar-secondary' ); ?>
 </aside><!-- #secondary -->

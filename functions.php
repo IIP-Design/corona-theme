@@ -42,9 +42,12 @@ function corona_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	add_theme_support( 'menus' );
+
+	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'corona' ),
+		'primary' => esc_html__( 'Primary', 'Primary navigation' ),
+		'secondary' => esc_html__( 'Secondary', 'Secondary navigation' )
 	) );
 
 	/*
@@ -99,8 +102,18 @@ add_action( 'after_setup_theme', 'corona_content_width', 0 );
  */
 function corona_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'corona' ),
-		'id'            => 'sidebar-1',
+		'name'          => esc_html__( 'Primary Sidebar', 'corona' ),
+		'id'            => 'sidebar-primary',
+		'description'   => esc_html__( 'Add widgets here.', 'corona' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Secondary Sidebar', 'corona' ),
+		'id'            => 'sidebar-secondary',
 		'description'   => esc_html__( 'Add widgets here.', 'corona' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',

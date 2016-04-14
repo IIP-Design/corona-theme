@@ -54,7 +54,7 @@ get_header(); ?>
 			if( is_active_sidebar( 'sidebar-primary') ) {
 				dynamic_sidebar( 'sidebar-primary' );
 			}
-		?><!-- primary sidebar -->
+		?><!-- .primary sidebar -->
 
 
 	</div><!-- .content-sidebar-wrap -->
@@ -64,7 +64,7 @@ get_header(); ?>
 		if( is_active_sidebar('sidebar-secondary') ) {
 			dynamic_sidebar( 'sidebar-secondary' );
 		}
-	?><!-- secondary sidebar -->
+	?><!-- .secondary sidebar -->
 <?php
 
 get_footer();

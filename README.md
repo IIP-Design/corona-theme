@@ -11,8 +11,10 @@ Corona uses NPM Scripts to run its build process. Checkout the [`package.json`](
 * [Imagemin](https://github.com/imagemin/imagemin)
 * [BrowserSync](https://www.browsersync.io/)
 
-In development, you should be able to kick it all off with:
+In development, you should be able to watch for changes and recompile your assets by running:
 
 ```bash
 $ npm run watch
 ```
+
+If you need to compile Modernizr for *development only*, you can just run `npm run modernizr:dev` to run the development version.

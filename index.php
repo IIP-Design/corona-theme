@@ -13,6 +13,7 @@
  */
 
 get_header(); ?>
+
 	<div class="content-sidebar-wrap">
 		<main id="main" class="content" role="main">
 
@@ -49,7 +50,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 
-		<?php 
+		<?php
 			// only show if widgets are assigned to it
 			if( is_active_sidebar( 'sidebar-primary') ) {
 				dynamic_sidebar( 'sidebar-primary' );
@@ -58,8 +59,8 @@ get_header(); ?>
 
 
 	</div><!-- .content-sidebar-wrap -->
-	
-	<?php 
+
+	<?php
 		// only show if widgets are assigned to it
 		if( is_active_sidebar('sidebar-secondary') ) {
 			dynamic_sidebar( 'sidebar-secondary' );

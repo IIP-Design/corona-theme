@@ -3,5 +3,6 @@ images/dist
 node_modules/
 .DS_Store
 .sass-cache/
-npm-debug.log
+npm-debug.log*
 vendor/
+styles/_style-deprecated.scss

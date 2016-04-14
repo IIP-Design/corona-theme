@@ -52,9 +52,9 @@
 
 	</header><!-- #masthead -->
 
-	<nav class="nav-primary" role="navigation">
+	<nav id="site-navigation" class="nav-primary" role="navigation">
 		<button class="menu-toggle" aria-controls="menu-primary" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'corona' ); ?></button>
-		<?php 
+		<?php
  			$args = array(
  				'theme_location'	=> 'primary',
  				'menu_id'			=> 'menu-primary',
@@ -78,6 +78,6 @@
  			);
 			wp_nav_menu( $args );
 		?>
-    </nav><!-- .nav-secondary-->
+  	</nav><!-- .nav-secondary-->
 
 	<div id="content" class="site-inner">

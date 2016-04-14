@@ -28,15 +28,12 @@
   #Float clearing
 \*------------------------------------*/
 
-.site-container:before,
-.site-footer:before,
-.site-footer:after {
+.site-container:before {
 	content: "";
 	display: table;
 	table-layout: fixed;
 }
 
-.site-container:after,
-.site-footer:after {
+.site-container:after {
 	clear: both;
 }

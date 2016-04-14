@@ -7,6 +7,36 @@
  * @package corona
  */
 
+define( 'TEMPLATE_DIR', get_template_directory() );
+/**
+ * Implement the Custom Header feature.
+ */
+require TEMPLATE_DIR . '/inc/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require TEMPLATE_DIR . '/inc/template-tags.php';
+
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require TEMPLATE_DIR . '/inc/extras.php';
+
+/**
+ * Customizer additions.
+ */
+require TEMPLATE_DIR . '/inc/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+require TEMPLATE_DIR . '/inc/jetpack.php';
+
+
+/**
+ * Initialization
+ */
 if ( ! function_exists( 'corona_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -44,12 +74,6 @@ function corona_setup() {
 
 	add_theme_support( 'menus' );
 
-	// This theme uses wp_nav_menu() in two locations.
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'Primary navigation' ),
-		'secondary' => esc_html__( 'Secondary', 'Secondary navigation' )
-	) );
-
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -79,6 +103,13 @@ function corona_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+		// This theme uses wp_nav_menu() in two locations.
+	register_nav_menus( array(
+		'primary' => esc_html__( 'Primary', 'Primary navigation' ),
+		'secondary' => esc_html__( 'Secondary', 'Secondary navigation' )
+	) );
+
 }
 endif;
 add_action( 'after_setup_theme', 'corona_setup' );
@@ -96,11 +127,21 @@ function corona_content_width() {
 add_action( 'after_setup_theme', 'corona_content_width', 0 );
 
 /**
- * Register widget area.
+ * Register widget areas.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function corona_widgets_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Header Right', 'corona' ),
+		'id'            => 'header-right',
+		'description'   => esc_html__( 'This is the header widget area. It typically appears next to the site title or logo.', 'corona' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>'
+	) );
+
 	register_sidebar( array(
 		'name'          => esc_html__( 'Primary Sidebar', 'corona' ),
 		'id'            => 'sidebar-primary',
@@ -114,6 +155,16 @@ function corona_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Secondary Sidebar', 'corona' ),
 		'id'            => 'sidebar-secondary',
+		'description'   => esc_html__( 'Add widgets here.', 'corona' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>'
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer', 'corona' ),
+		'id'            => 'footer',
 		'description'   => esc_html__( 'Add widgets here.', 'corona' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -136,27 +187,4 @@ function corona_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'corona_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';

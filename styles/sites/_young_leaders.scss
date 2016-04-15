@@ -1,0 +1,164 @@
+/*------------------------------------*\
+  #Young Leaders Styles
+\*------------------------------------*/
+
+
+
+/*------------------------------------*\
+  #Variables
+\*------------------------------------*/
+
+// Colors
+$accent: rgb(65, 145, 191);
+$body-bg: rgb(230, 230, 230);
+$font-color: rgb(79, 79, 79);
+$link-color: rgb(65, 145, 191);
+$first-footer-bg: rgb(61, 61, 61);
+$first-footer-accent: rgb(255, 255, 255);
+$second-footer-bg: rgb(48, 48, 48);
+$second-footer-accent: rgb(153, 153, 153);
+
+// Typography
+$font-default: 'Oxygen', sans-serif;
+
+// Repeated styles
+$box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+
+
+
+
+/*------------------------------------*\
+  #Base styles
+\*------------------------------------*/
+
+body {
+  background: $body-bg;
+  color: $font-color;
+  font-family: $font-default;
+}
+
+a {
+  color: $link-color;
+}
+
+.site-container {
+  background: white;
+  border-top: 5px solid $accent;
+
+  @include bp($tablet) {
+    box-shadow: $box-shadow;
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 90%;
+  }
+}
+
+.site-inner {
+  background: white;
+  padding: em(16);
+}
+
+
+
+
+/*------------------------------------*\
+  #Navigation
+\*------------------------------------*/
+
+.menu-primary {
+  overflow: hidden;
+}
+
+.menu-primary a {
+  font-weight: bold;
+  padding: em(12) em(15);
+}
+
+.menu-primary a:visited {
+  color: $link-color;
+}
+
+.menu-primary a:hover {
+  color: lighten($link-color, 20%);
+}
+
+
+
+
+
+
+/*------------------------------------*\
+  #Footer
+\*------------------------------------*/
+
+.site-footer p {
+  color: $second-footer-accent;
+  font-size: em(14);
+  margin: 0;
+  padding: em(32, 14) em(32, 14) em(32, 14) em(85, 14);
+}
+
+.site-footer .widget {
+  margin: 0;
+}
+
+.footer-1 {
+  background: $first-footer-bg;
+  padding: em(20);
+
+  @include bp($tablet) {
+    padding: em(50);
+  }
+}
+
+.footer-1 .menu {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.footer-1 li {
+  border-bottom: 1px solid $first-footer-accent;
+  list-style-type: none;
+  padding: em(10) 0;
+
+  @include bp($tablet) {
+    float: left;
+    margin: 0 1em;
+    padding: 0 0 em(10) 0;
+  }
+}
+
+.footer-1 li:hover {
+  border-bottom: 1px solid $accent;
+}
+
+.footer-1 a {
+  color: $first-footer-accent;
+  font-size: em(14);
+  padding: 0 em(16, 14);
+  text-decoration: none;
+}
+
+.footer-1 a:hover {
+  color: darken($first-footer-accent, 15%);
+}
+
+.footer-2 {
+  background: $second-footer-bg url(../corona/images/dist/flag.png) no-repeat em(32) em(38);
+}
+
+
+
+
+/*------------------------------------*\
+  #Signup Form
+\*------------------------------------*/
+
+.mc4wp-form {
+  background: $accent;
+}
+
+.mc4wp-form-fields label {
+  @extend %visuallyhidden;
+}

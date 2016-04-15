@@ -12,8 +12,22 @@
 	width: 100%;
 }
 .content {
-	margin: 0 25% 0 0;
+	float: left;
+	margin: 0;
+	width: 67%;
 }
+
+.sidebar-primary {
+	float: right;
+	margin: 0;
+	width: 33%;
+}
+
+.content,
+.sidebar-primary {
+  padding: em(16);
+}
+
 .site-inner .widget-area {
 	float: right;
 	overflow: hidden;

@@ -28,12 +28,35 @@
   #Float clearing
 \*------------------------------------*/
 
-.site-container:before {
-	content: "";
+.author-box:before,
+.clearfix:before,
+.entry:before,
+.entry-content:before,
+.nav-primary:before,
+.nav-secondary:before,
+.pagination:before,
+.site-container:before,
+.site-footer:before,
+.site-header:before,
+.site-inner:before,
+.wrap:before {
+	content: " ";
 	display: table;
-	table-layout: fixed;
 }
 
-.site-container:after {
+.author-box:after,
+.clearfix:after,
+.entry:after,
+.entry-content:after,
+.nav-primary:after,
+.nav-secondary:after,
+.pagination:after,
+.site-container:after,
+.site-footer:after,
+.site-header:after,
+.site-inner:after,
+.wrap:after {
 	clear: both;
+	content: " ";
+	display: table;
 }

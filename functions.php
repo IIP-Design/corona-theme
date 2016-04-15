@@ -163,8 +163,18 @@ function corona_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'corona' ),
-		'id'            => 'footer',
+		'name'          => esc_html__( 'Footer 1', 'corona' ),
+		'id'            => 'footer-1',
+		'description'   => esc_html__( 'Add widgets here.', 'corona' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>'
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 2', 'corona' ),
+		'id'            => 'footer-2',
 		'description'   => esc_html__( 'Add widgets here.', 'corona' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -186,5 +196,3 @@ function corona_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'corona_scripts' );
-
-

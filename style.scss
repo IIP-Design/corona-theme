@@ -13,6 +13,7 @@ Text Domain: corona
 @import 'styles/variables';
 @import 'styles/mixins';
 @import 'styles/base';
+@import 'styles/layouts/content-sidebar.scss';
 @import 'styles/modules/caption';
 @import 'styles/modules/comment';
 @import 'styles/modules/gallery';

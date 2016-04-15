@@ -49,23 +49,26 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
-
 		<?php
 			// only show if widgets are assigned to it
 			if( is_active_sidebar( 'sidebar-primary') ) {
-				dynamic_sidebar( 'sidebar-primary' );
+				echo('<aside class="sidebar sidebar-primary">');
+					dynamic_sidebar( 'sidebar-primary' );
+				echo('</aside>');
 			}
+
 		?><!-- .primary sidebar -->
 
-
 	</div><!-- .content-sidebar-wrap -->
-
 	<?php
 		// only show if widgets are assigned to it
 		if( is_active_sidebar('sidebar-secondary') ) {
+		echo('<aside class="sidebar sidebar-secondary">');
 			dynamic_sidebar( 'sidebar-secondary' );
+		echo('</aside>');
 		}
 	?><!-- .secondary sidebar -->
+
 <?php
 
 get_footer();

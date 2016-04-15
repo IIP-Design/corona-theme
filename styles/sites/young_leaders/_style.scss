@@ -136,31 +136,41 @@ a {
   #WIDGET
 \*------------------------------------*/
 
-.widget-title {
+.widget-title,
+.widget-title a,
+.widget_rss .widget-title a {
   font-size: em(18);
   color: $link-color;
 }
 
-.widget_recent_entries ul {
+.rss-widget-icon {
+  display: none;
+}
+
+.widget_recent_entries ul,
+.widget_rss ul {
   margin: 0;
   padding: 0;
 }
 
-.widget_recent_entries li {
+.widget_recent_entries li,
+.widget_rss li {
   border-top: 1px solid $border-color;
   list-style-type: none;
   margin: 0;
   padding: em(10) 0;
 }
 
-.widget_recent_entries a {
+.widget_recent_entries a,
+.widget_rss a {
   color: $widget-font-color;
   font-size: em(14);
   line-height: em(23);
   text-decoration: none;
 }
 
-.widget_recent_entries a:hover {
+.widget_recent_entries a:hover,
+.widget_rss a:hover {
   color: $link-color;
 }
 

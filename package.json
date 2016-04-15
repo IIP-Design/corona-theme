@@ -12,7 +12,6 @@
     "eslint": "eslint js/src/*.js --quiet",
     "uglify": "uglifyjs js/src/*.js -o js/dist/script.js",
     "js": "npm run eslint && npm run uglify",
-    "preimagemin": "rm -rf images/dist",
     "imagemin": "imagemin images/src/* images/dist",
     "server": "browser-sync start --proxy 'corona.dev' --files './*.php' 'template-parts/*.php' 'inc/*.php' 'style.css' 'rtl.css' 'images/dist/*' 'js/dist/*.js'",
     "watch:sass": "onchange ./styles/**/*.scss ./styles/*.scss ./style.scss ./rtl.scss -- npm run css",

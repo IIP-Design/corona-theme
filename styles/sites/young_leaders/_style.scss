@@ -3,30 +3,6 @@
 \*------------------------------------*/
 
 
-
-/*------------------------------------*\
-  #Variables
-\*------------------------------------*/
-
-// Colors
-$accent: rgb(65, 145, 191);
-$body-bg: rgb(230, 230, 230);
-$font-color: rgb(79, 79, 79);
-$link-color: rgb(65, 145, 191);
-$first-footer-bg: rgb(61, 61, 61);
-$first-footer-accent: rgb(255, 255, 255);
-$second-footer-bg: rgb(48, 48, 48);
-$second-footer-accent: rgb(153, 153, 153);
-
-// Typography
-$font-default: 'Oxygen', sans-serif;
-
-// Repeated styles
-$box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
-
-
-
-
 /*------------------------------------*\
   #Base styles
 \*------------------------------------*/
@@ -35,6 +11,10 @@ body {
   background: $body-bg;
   color: $font-color;
   font-family: $font-default;
+}
+
+p {
+  line-height: 1.643;
 }
 
 a {
@@ -55,7 +35,10 @@ a {
 
 .site-inner {
   background: white;
-  padding: em(16);
+
+  @include bp($tablet) {
+    padding: em(32);
+  }
 }
 
 
@@ -81,8 +64,6 @@ a {
 .menu-primary a:hover {
   color: lighten($link-color, 20%);
 }
-
-
 
 
 
@@ -152,11 +133,61 @@ a {
 
 
 /*------------------------------------*\
+  #WIDGET
+\*------------------------------------*/
+
+.widget-title {
+  font-size: em(18);
+  color: $link-color;
+}
+
+.widget_recent_entries ul {
+  margin: 0;
+  padding: 0;
+}
+
+.widget_recent_entries li {
+  border-top: 1px solid $border-color;
+  list-style-type: none;
+  margin: 0;
+  padding: em(10) 0;
+}
+
+.widget_recent_entries a {
+  color: $widget-font-color;
+  font-size: em(14);
+  line-height: em(23);
+  text-decoration: none;
+}
+
+.widget_recent_entries a:hover {
+  color: $link-color;
+}
+
+
+
+/*------------------------------------*\
   #Signup Form
 \*------------------------------------*/
 
 .mc4wp-form {
   background: $accent;
+  padding: em(16);
+}
+
+.mc4wp-form h2,
+.mc4wp-form p {
+  color: white;
+}
+
+.mc4wp-form h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+// Hard coding in px so the css-select plugin sizes properly
+.mc4wp-form select {
+  font-size: 14px;
 }
 
 .mc4wp-form-fields label {

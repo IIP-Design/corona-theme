@@ -15,7 +15,7 @@
 get_header(); ?>
 
 	<div class="content-sidebar-wrap">
-		<main id="main" class="content" role="main">
+		<main id="main" class="content" role="main"><!-- post loop -->
 
 		<?php
 		if ( have_posts() ) :
@@ -44,7 +44,7 @@ get_header(); ?>
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part( 'template-parts/content', 'none' ); 
 
 		endif; ?>
 

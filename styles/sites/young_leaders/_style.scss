@@ -33,7 +33,7 @@ a {
   }
 }
 
-.site-inner {
+.content-sidebar-wrap {
   background: white;
 
   @include bp($tablet) {
@@ -47,6 +47,10 @@ a {
 /*------------------------------------*\
   #Navigation
 \*------------------------------------*/
+
+.nav-primary ul {
+  margin: em(16) 0;
+}
 
 .menu-primary {
   overflow: hidden;
@@ -176,8 +180,20 @@ a {
 
 
 
+
 /*------------------------------------*\
-  #Signup Form
+  #HOMEPAGE
+\*------------------------------------*/
+
+.home .content {
+  width: 100%;
+}
+
+
+
+
+/*------------------------------------*\
+  #SIGNUP-FORM
 \*------------------------------------*/
 
 .mc4wp-form {

@@ -33,6 +33,16 @@ require TEMPLATE_DIR . '/inc/customizer.php';
  */
 require TEMPLATE_DIR . '/inc/jetpack.php';
 
+/**
+ * Load base widgets.
+ */
+require TEMPLATE_DIR . '/inc/widgets/recent-post-list.php';
+
+/**
+ * Load base shortcodes.
+ */
+require TEMPLATE_DIR . '/inc/shortcodes/post.php';
+
 
 /**
  * Initialization
@@ -114,6 +124,8 @@ function corona_setup() {
 endif;
 add_action( 'after_setup_theme', 'corona_setup' );
 
+set_post_thumbnail_size( 300, 225, true );
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -183,6 +195,18 @@ function corona_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'corona_widgets_init' );
+
+
+/**
+ * Register widges.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function corona_register_widgets() {
+  register_widget( 'Corona_Recent_Post_List' );
+}
+
+add_action( 'widgets_init', 'corona_register_widgets' );
 
 /**
  * Enqueue scripts and styles.

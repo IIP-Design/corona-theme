@@ -34,8 +34,10 @@
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			<?php else :
+				// this was a <p> for pages that are not either home or front pages.  Changed to be the same on all until we can decide what we want to do 
+				?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php
 			endif;
 
@@ -59,24 +61,28 @@
 		<button class="menu-toggle" aria-controls="menu-primary" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'corona' ); ?></button>
 		<?php
  			$args = array(
- 				'theme_location' => 'primary',
- 				'menu_id'=> 'menu-primary',
- 				'menu_class'=> 'menu nav-menu menu-primary',
- 				'container_class' => 'wrap'
+ 				'theme_location'	=> 'primary',
+ 				'menu_id'			=> 'menu-primary',
+ 				'menu_class'		=> 'menu nav-menu menu-primary',
+ 				'container_class' 	=> 'wrap',
+ 				'fallback_cb'    	=> ''
  			);
 			wp_nav_menu( $args );
 		?>
-  </nav><!-- .nav-primary-->
-  <nav class="nav-secondary" role="navigation">
-  	<?php
-			$args = array(
-				'theme_location' => 'secondary',
-				'menu_id'=> 'menu-secondary',
-				'menu_class'=> 'menu nav-menu menu-secondary',
-				'container_class' => 'wrap'
-			);
-		wp_nav_menu( $args );
+    </nav><!-- .nav-primary-->
+    
+    <nav class="nav-secondary" role="navigation">
+    	<?php 
+ 			$args = array(
+ 				'theme_location'	=> 'secondary',
+ 				'menu_id'			=> 'menu-secondary',
+ 				'menu_class'		=> 'menu nav-menu menu-secondary',
+ 				'container_class' 	=> 'wrap',
+ 				'fallback_cb'    	=> ''
+
+ 			);
+			wp_nav_menu( $args );
 		?>
-  </nav><!-- .nav-secondary-->
+  	</nav><!-- .nav-secondary-->
 
 	<div id="content" class="site-inner">

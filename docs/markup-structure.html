@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+
+<title>Visual Markup Guide</title>
+
+<link href='//fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
+
+<style type="text/css" media="screen">
+div:before, div:after {
+	content: " ";
+	display: table;
+}
+div:after {
+	clear: both;
+}
+
+a {
+	border-bottom: 1px solid #ddd;
+	color: #f15123;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #333;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+}
+
+body {
+	background: #f5f5f5;
+	color: #666;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	margin: 25px 0;
+	padding: 0;
+}
+
+body > h1 {
+	color: #333;
+	font-family: 'Lato', Verdana, arial, sans-serif;
+	font-weight: 700;
+	margin: 0;
+	text-align: center;
+}
+
+body > p {
+	text-align: center;
+}
+
+p.toggle {
+	margin-bottom: 25px;
+}
+
+.box {
+	/* 007DC3 717171 */
+	background: #fff;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+	padding: 20px;
+	margin: 20px 10px;
+	position: relative;
+}
+
+.label {
+	background: #333;
+	color: #fff;
+	position: absolute;
+	top: -14px;
+	left: -1px;
+	z-index: 1;
+	margin: 0;
+	padding: 4px;
+}
+
+.site-container {
+	margin: 0 auto 25px;
+	width: 1280px;
+}
+
+.title-area {
+	width: 35%;
+	float: left;
+}
+
+.header-widget-area {
+	float: right;
+	width: 60%;
+}
+
+.content-sidebar-wrap {
+	float: left;
+	width: 72%;
+}
+
+.content {
+	float: left;
+	width: 62%;
+}
+
+.sidebar-primary {
+	float: right;
+	width: 33%;
+}
+
+.sidebar-secondary {
+	float: right;
+	width: 24%;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Visual Markup Guide</h1>
+
+<div class="box site-container">
+<p class="label">&lt;div class=&quot;site-container&quot;&gt;</p>
+
+	<div class="box site-header">
+	<p class="label">&lt;header class=&quot;site-header&quot;&gt;</p>
+
+		<div class="box title-area">
+		<p class="label">&lt;div class=&quot;title-area&quot;&gt;</p>
+
+			<div class="box site-title">
+			<p class="label">&lt;h1 class=&quot;site-title&quot;&gt;</p>
+			</div>
+
+			<div class="box site-description">
+			<p class="label">&lt;h2 class=&quot;site-description&quot;&gt;</p>
+			</div>
+		</div>
+		<div class="box header-widget-area">
+		<p class="label">&lt;aside class=&quot;header-widget-area&quot;&gt;</p>
+			<div class="box widget">
+			<p class="label">&lt;section class=&quot;widget&quot;&gt;</p>
+			</div>
+
+			<div class="box widget">
+			<p class="label">&lt;section class=&quot;widget&quot;&gt;</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="box nav-primary">
+	<p class="label">&lt;nav class=&quot;nav-primary&quot;&gt;</p>
+		<div class="box menu-primary">
+		<p class="label">&lt;ul class=&quot;menu nav-menu menu-primary&quot;&gt;</p>
+		</div>
+	</div>
+
+	<div class="box nav-secondary">
+	<p class="label">&lt;nav class=&quot;nav-secondary&quot;&gt;</p>
+		<div class="box menu-secondary">
+		<p class="label">&lt;ul class=&quot;menu nav-menu menu-secondary&quot;&gt;</p>
+		</div>
+	</div>
+
+	<div class="box site-inner">
+	<p class="label">&lt;div class=&quot;site-inner&quot;&gt;</p>
+
+		<div class="box content-sidebar-wrap">
+		<p class="label">&lt;div class=&quot;content-sidebar-wrap&quot;&gt;</p>
+
+			<div class="box content">
+			<p class="label">&lt;main class=&quot;content&quot;&gt;</p>
+
+				<div class="box entry">
+				<p class="label">&lt;article class=&quot;entry&quot;&gt;</p>
+
+					<div class="box entry-header html5">
+					<p class="label">&lt;header class=&quot;entry-header&quot;&gt;</p>
+
+						<div class="box entry-title">
+						<p class="label">&lt;h1 class=&quot;entry-title&quot;&gt;</p>
+						</div>
+
+						<div class="box entry-meta">
+						<p class="label">&lt;div class=&quot;entry-meta&quot;&gt;</p>
+						</div>
+
+					</div>
+
+					<div class="box entry-content">
+					<p class="label">&lt;div class=&quot;entry-content&quot;&gt;</p>
+					</div>
+
+					<div class="box entry-footer html5">
+					<p class="label">&lt;footer class=&quot;entry-footer&quot;&gt;</p>
+
+						<div class="box entry-meta">
+						<p class="label">&lt;div class=&quot;entry-meta&quot;&gt;</p>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="box entry-comments">
+				<p class="label">&lt;div class=&quot;entry-comments&quot; id=&quot;comments&quot;&gt;</p>
+				</div>
+
+				<div class="box entry-respond">
+				<p class="label">&lt;div id=&quot;respond&quot; class=&quot;comment-respond&quot;&gt;</p>
+				</div>
+
+			</div>
+
+			<div class="box sidebar sidebar-primary">
+			<p class="label">&lt;aside class=&quot;sidebar sidebar-primary&quot;&gt;</p>
+				<div class="box widget">
+				<p class="label">&lt;section class=&quot;widget&quot;&gt;</p>
+				</div>
+				<div class="box widget">
+				<p class="label">&lt;section class=&quot;widget&quot;&gt;</p>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="box sidebar sidebar-secondary">
+		<p class="label">&lt;aside class=&quot;sidebar sidebar-secondary&quot;&gt;</p>
+
+			<div class="box widget">
+			<p class="label">&lt;section class=&quot;widget&quot;&gt;</p>
+			</div>
+
+			<div class="box widget">
+			<p class="label">&lt;section class=&quot;widget&quot;&gt;</p>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="box site-footer">
+	<p class="label">&lt;footer class=&quot;site-footer&quot;&gt;</p>
+	</div>
+
+</div>
+
+<p align="center">Forked from the Genesis Visual Markup Guide by <a href="http://www.nathanrice.net">Nathan Rice</a>.</p>
+
+</body>
+</html>

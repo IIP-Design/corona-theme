@@ -18,3 +18,8 @@ $ npm run watch
 ```
 
 If you need to compile Modernizr for *development only*, you can just run `npm run modernizr:dev` to run the development version.
+
+
+## Documentation
+
+You can find more documentation in the [`docs`](docs) directory.

@@ -18,7 +18,8 @@
     "watch:js": "onchange ./js/src/*.js -v -- npm run js",
     "watch:image": "onchange ./images/src/* -- npm run imagemin",
     "watch": "parallelshell 'npm run server' 'npm run watch:sass' 'npm run watch:js' 'npm run watch:image'",
-    "modernizr:dev": "node_modules/modernizr/bin/modernizr -c node_modules/modernizr/lib/config-all.json -d js/src/modernizr.dev.js"
+    "modernizr:dev": "node_modules/modernizr/bin/modernizr -c node_modules/modernizr/lib/config-all.json -d js/src/modernizr.dev.js",
+    "prod": "parallelshell 'npm run css' 'npm run uglify' 'npm run imagemin'"
   },
   "repository": {
     "type": "git",

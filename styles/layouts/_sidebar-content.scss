@@ -1,0 +1,17 @@
+/*------------------------------------*\
+  #SIDEBAR-CONTENT
+\*------------------------------------*/
+
+.content-sidebar-wrap {
+	float: right;
+	margin: 0 0 0 -25%;
+	width: 100%;
+}
+.content {
+	margin: 0 0 0 25%;
+}
+.site-inner .widget-area {
+	float: left;
+	overflow: hidden;
+	width: 25%;
+}

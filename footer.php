@@ -11,16 +11,27 @@
 
 ?>
 
-	</div><!-- #content -->
+	</div><!-- .site-inner -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'corona' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'corona' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'corona' ), 'corona', '<a href="https://github.com/IIP-Design/corona" rel="designer">Office of Design</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+	<footer class="site-footer">
+
+	<?php
+			// only show if widgets are assigned to it
+			if( is_active_sidebar( 'footer-1') ) {
+				echo ('<div class="footer-1">');
+					dynamic_sidebar( 'footer-1' );
+				echo ('</div>');
+			}
+
+			if( is_active_sidebar( 'footer-2') ) {
+				echo ('<div class="footer-2">');
+					dynamic_sidebar( 'footer-2' );
+				echo ('</div>');
+			}
+		?><!-- .footer -->
+
+	</footer><!-- .site-footer -->
+</div><!-- .site-container -->
 
 <?php wp_footer(); ?>
 

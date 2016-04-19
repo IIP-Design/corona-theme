@@ -1,0 +1,40 @@
+/*------------------------------------*\
+  #EM-CONVERSION
+\*------------------------------------*/
+
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+
+
+
+/*------------------------------------*\
+  #MEDIA-QUERY
+\*------------------------------------*/
+
+@mixin bp($point) {
+  @media ( 'min-width:' + $point ) {
+    @content;
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  #VISUALLY-HIDDEN
+\*------------------------------------*/
+
+%visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

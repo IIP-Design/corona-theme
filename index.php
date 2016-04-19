@@ -14,8 +14,8 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div class="content-sidebar-wrap">
+		<main id="main" class="content" role="main"><!-- post loop -->
 
 		<?php
 		if ( have_posts() ) :
@@ -44,13 +44,31 @@ get_header(); ?>
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part( 'template-parts/content', 'none' ); 
 
 		endif; ?>
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
+		<?php
+			// only show if widgets are assigned to it
+			if( is_active_sidebar( 'sidebar-primary') ) {
+				echo('<aside class="sidebar sidebar-primary">');
+					dynamic_sidebar( 'sidebar-primary' );
+				echo('</aside>');
+			}
+
+		?><!-- .primary sidebar -->
+
+	</div><!-- .content-sidebar-wrap -->
+	<?php
+		// only show if widgets are assigned to it
+		if( is_active_sidebar('sidebar-secondary') ) {
+		echo('<aside class="sidebar sidebar-secondary">');
+			dynamic_sidebar( 'sidebar-secondary' );
+		echo('</aside>');
+		}
+	?><!-- .secondary sidebar -->
 
 <?php
-get_sidebar();
+
 get_footer();

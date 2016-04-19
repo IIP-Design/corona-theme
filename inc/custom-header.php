@@ -24,8 +24,8 @@ function corona_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'corona_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
+		'width'                  => 648,
+		'height'                 => 100,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'corona_header_style',
 	) ) );

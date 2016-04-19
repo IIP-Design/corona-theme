@@ -1,0 +1,40 @@
+/*------------------------------------*\
+  #CONTENT-SIDEBAR
+\*------------------------------------*/
+
+.content-sidebar-wrap {
+	float: left;
+	margin: 0 -25% 0 0;
+	width: 100%;
+}
+
+.content,
+.sidebar-primary {
+  padding: em(16);
+}
+
+.content {
+	float: left;
+	margin: 0;
+
+	@include bp($laptop) {
+		padding-right: em(32);
+		width: 67%;
+	}
+}
+
+.sidebar-primary {
+	float: right;
+	margin: 0;
+
+	@include bp($laptop) {
+		padding-left: em(32);
+		width: 33%;
+	}
+}
+
+.site-inner .widget-area {
+	float: right;
+	overflow: hidden;
+	width: 25%;
+}

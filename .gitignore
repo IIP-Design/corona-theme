@@ -1,7 +1,9 @@
 js/dist
 images/dist
 node_modules/
+*.css
 .DS_Store
 .sass-cache/
-npm-debug.log
+npm-debug.log*
 vendor/
+styles/_style-deprecated.scss

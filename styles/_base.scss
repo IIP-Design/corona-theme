@@ -136,7 +136,8 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1em 0;
+	padding: 1em;
 }
 
 ul {
@@ -149,8 +150,7 @@ ol {
 
 li > ul,
 li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin: 0;
 }
 
 dt {
@@ -162,8 +162,9 @@ dd {
 }
 
 img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+	height: auto;
+	width: auto !important;
+	max-width: 100% !important;
 }
 
 table {

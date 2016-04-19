@@ -37,7 +37,7 @@ a {
   background: white;
 
   @include bp($tablet) {
-    padding: em(32);
+    padding: 0 em(32) em(32);
   }
 }
 
@@ -45,7 +45,18 @@ a {
 
 
 /*------------------------------------*\
-  #Navigation
+  #POSTS-AND-PAGES
+\*------------------------------------*/
+
+.entry-title {
+  margin-top: 0;
+}
+
+
+
+
+/*------------------------------------*\
+  #NAVIGATION
 \*------------------------------------*/
 
 .nav-primary ul {

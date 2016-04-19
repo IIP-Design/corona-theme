@@ -17,16 +17,26 @@
 			} else {
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			}
+		?>
+	</header><!-- .entry-header -->
 
+	<div class="entry-content">
+		<?php
+			if ( has_post_thumbnail() ) {
+				$role = empty( $instance['show_title'] ) ? '' : 'aria-hidden="true"';
+				$image = get_the_post_thumbnail();
+					printf( '<a href="%s" %s>%s</a>', get_permalink(), $role, $image );
+			}
+		?>
+
+		<?php
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php corona_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
+		
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */

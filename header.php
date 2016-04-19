@@ -77,18 +77,21 @@
 		?>
     </nav><!-- .nav-primary-->
 
-    <nav class="nav-secondary" role="navigation">
-    	<?php
- 			$args = array(
- 				'theme_location'	=> 'secondary',
- 				'menu_id'			=> 'menu-secondary',
- 				'menu_class'		=> 'menu nav-menu menu-secondary',
- 				'container_class' 	=> 'wrap',
- 				'fallback_cb'    	=> ''
+		<?php
+			if ( has_nav_menu( 'secondary' ) ) {
+		    $html = '<nav class="nav-secondary" role="navigation">';
+		 			$args = array(
+		 				'theme_location'	=> 'secondary',
+		 				'menu_id'			=> 'menu-secondary',
+		 				'menu_class'		=> 'menu nav-menu menu-secondary',
+		 				'container_class' 	=> 'wrap',
+		 				'fallback_cb'    	=> ''
 
- 			);
-			wp_nav_menu( $args );
+		 			);
+					wp_nav_menu( $args );
+		  	$html .= '</nav><!-- .nav-secondary-->';
+				return $html;
+			}
 		?>
-  	</nav><!-- .nav-secondary-->
 
 	<div id="content" class="site-inner">

@@ -111,6 +111,15 @@ a {
   #Footer
 \*------------------------------------*/
 
+.site-footer {
+  @include bp($tablet) {
+    box-shadow: $box-shadow;
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 90%;
+  }
+}
+
 .site-footer p {
   color: $second-footer-accent;
   font-size: em(14);

@@ -35,7 +35,7 @@
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else :
-				// this was a <p> for pages that are not either home or front pages.  Changed to be the same on all until we can decide what we want to do 
+				// this was a <p> for pages that are not either home or front pages.  Changed to be the same on all until we can decide what we want to do
 				?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php
@@ -57,8 +57,14 @@
 
 	</header><!-- #masthead -->
 
+	<div class="menu-toggle" aria-controls="menu-primary" aria-expanded="false">
+		<div class="hamburger">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+	</div>
 	<nav id="site-navigation" class="nav-primary" role="navigation">
-		<button class="menu-toggle" aria-controls="menu-primary" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'corona' ); ?></button>
 		<?php
  			$args = array(
  				'theme_location'	=> 'primary',
@@ -70,9 +76,9 @@
 			wp_nav_menu( $args );
 		?>
     </nav><!-- .nav-primary-->
-    
+
     <nav class="nav-secondary" role="navigation">
-    	<?php 
+    	<?php
  			$args = array(
  				'theme_location'	=> 'secondary',
  				'menu_id'			=> 'menu-secondary',

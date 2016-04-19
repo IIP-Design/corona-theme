@@ -1,5 +1,5 @@
 /*------------------------------------*\
-  #Underscores Navigation
+  #PRIMARY-NAVIGATION
 \*------------------------------------*/
 
 .nav-primary {
@@ -17,8 +17,10 @@
 }
 
 .nav-primary li {
-	float: left;
-	position: relative;
+	@include bp($laptop) {
+		float: left;
+		position: relative;
+	}
 }
 
 .nav-primary a {
@@ -76,20 +78,12 @@
 .nav-primary .current-menu-ancestor > a {
 }
 
-/* Small menu. */
-.menu-toggle,
-.nav-primary.toggled ul {
-	display: block;
-}
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.nav-primary ul {
-		display: block;
-	}
-}
+
+
+/*------------------------------------*\
+  #CONTENT-NAVIGATION
+\*------------------------------------*/
 
 .content .comment-navigation,
 .content .posts-navigation,
@@ -111,4 +105,56 @@
 	float: right;
 	text-align: right;
 	width: 50%;
+}
+
+
+
+
+/*------------------------------------*\
+  #MOBILE-NAVIGATION
+\*------------------------------------*/
+
+/* Small menu. */
+.menu-toggle {
+	display: inline-block;
+	float: right;
+
+	@include bp($laptop) {
+		display: none;
+	}
+}
+
+.menu-primary {
+	position: absolute;
+	background: white;
+	width: 100%;
+
+	@include bp($laptop) {
+		position: static;
+		width: auto;
+	}
+}
+
+.nav-primary ul {
+	@include bp($laptop) {
+		display: block;
+	}
+}
+
+.nav-primary.toggled ul {
+	display: block;
+}
+
+.line {
+  border-top: em(4) solid $font-color;
+  clear: both;
+  display: block;
+  margin: em(2) 0;
+  width: 1.45em;
+
+	@include bp($big-mobile) {
+	  border-top: em(5) solid $font-color;
+		margin: em(4) 0;
+		width: 2em;
+	}
 }

@@ -49,11 +49,34 @@ a {
 \*------------------------------------*/
 
 .nav-primary ul {
-  margin: em(16) 0;
+  @include bp($laptop) {
+    margin: em(16) 0;
+  }
+}
+
+.menu-toggle {
+	margin: 0.85em;
+
+	@include bp($big-mobile) {
+		margin: 1.15em;
+	}
+
+	@include bp($tablet) {
+		margin: 1.85em;
+	}
+
 }
 
 .menu-primary {
+  border-bottom: em(3) solid $accent;
+  box-shadow: 0 em(10) em(15) em(-10) $font-color;
   overflow: hidden;
+
+	@include bp($tablet) {
+    border: 0;
+    box-shadow: none;
+		width: 90%;
+	}
 }
 
 .menu-primary a {
@@ -68,6 +91,8 @@ a {
 .menu-primary a:hover {
   color: lighten($link-color, 20%);
 }
+
+
 
 
 
@@ -187,6 +212,10 @@ a {
 
 .home .content {
   width: 100%;
+}
+
+.home .cta-image {
+  display: block;
 }
 
 

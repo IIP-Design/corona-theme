@@ -44,31 +44,37 @@ get_header(); ?>
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' ); 
+			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
 
 		</main><!-- #main -->
+
 		<?php
+		// check if the Flexible Sidebar flexible content field has rows of data
+		if ( class_exists('acf') && have_rows('america_sidebar') ) {
+		    while ( have_rows('america_sidebar') ) : the_row();
+		        the_sub_field('america_markup');
+		    endwhile;
+
+		// If it doesn't, show the global sidebars that have widgets assigned to them
+		} else {
+
 			// only show if widgets are assigned to it
 			if( is_active_sidebar( 'sidebar-primary') ) {
 				echo('<aside class="sidebar sidebar-primary">');
 					dynamic_sidebar( 'sidebar-primary' );
 				echo('</aside>');
-			}
-
-		?><!-- .primary sidebar -->
+			} //end primary sidebar ?>
 
 	</div><!-- .content-sidebar-wrap -->
-	<?php
-		// only show if widgets are assigned to it
-		if( is_active_sidebar('sidebar-secondary') ) {
-		echo('<aside class="sidebar sidebar-secondary">');
-			dynamic_sidebar( 'sidebar-secondary' );
-		echo('</aside>');
-		}
-	?><!-- .secondary sidebar -->
 
-<?php
+			<?php // only show if widgets are assigned to it
+			if( is_active_sidebar('sidebar-secondary') ) {
+				echo('<aside class="sidebar sidebar-secondary">');
+					dynamic_sidebar( 'sidebar-secondary' );
+				echo('</aside>');
+			} // end secondary sidebar
+	  }
 
 get_footer();

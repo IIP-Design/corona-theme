@@ -213,7 +213,7 @@ add_action( 'widgets_init', 'corona_register_widgets' );
  */
 function corona_scripts() {
 	wp_enqueue_style( 'corona-style', get_stylesheet_uri() );
-	wp_enqueue_script( 'corona-js', get_template_directory_uri() . '/js/dist/script.js', array(), '20160414', true );
+	wp_enqueue_script( 'corona-js', get_template_directory_uri() . '/js/dist/script.js', array(), '', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

@@ -7,6 +7,10 @@
 	display: block;
 	float: left;
 	width: 100%;
+
+	@include bp($laptop) {
+		float: none;
+	}
 }
 
 .nav-primary ul {
@@ -15,6 +19,7 @@
 	margin: 0;
 	padding-left: 0;
 	text-indent: 0;
+	z-index: 100;
 }
 
 .nav-primary li:before {
@@ -123,7 +128,14 @@
 /* Small menu. */
 .menu-toggle {
 	display: inline-block;
-	float: right;
+	left: calc(50% - 2.45em);
+	margin: 0;
+	position: relative;
+	top: 1em;
+
+	@include bp($big-mobile) {
+		left: calc(50% - 3em);
+	}
 
 	@include bp($laptop) {
 		display: none;

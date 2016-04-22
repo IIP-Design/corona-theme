@@ -3,21 +3,25 @@
 \*------------------------------------*/
 
 .content-sidebar-wrap {
-	float: left;
 	margin: 0 -25% 0 0;
 	width: 100%;
+
+	@include bp($laptop) {
+		float: left;
+	}
 }
 
 .content,
-.sidebar-primary {
+.sidebar-primary,
+.sidebar-secondary {
   padding: em(16);
 }
 
 .content {
-	float: left;
 	margin: 0;
 
 	@include bp($laptop) {
+		float: left;
 		padding-right: em(32);
 		width: 67%;
 	}
@@ -27,11 +31,13 @@
 	width: 100%;
 }
 
-.sidebar-primary {
-	float: right;
+.sidebar-primary,
+.sidebar-secondary {
 	margin: 0;
+	overflow: hidden;
 
 	@include bp($laptop) {
+		float: right;
 		padding-left: em(32);
 		width: 33%;
 	}

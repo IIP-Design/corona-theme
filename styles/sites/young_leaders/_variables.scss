@@ -19,8 +19,10 @@ $disabled-bg: #ccc;
 $disabled-font-color: #eee;
 $disabled-border: darken($disabled-bg, 10%);
 $placeholder-color: rgb(79, 79, 79);
-$button-bg: rgb(255, 255, 255);
-$button-font-color: rgb(65, 145, 191);
+$button-bg: rgb(16, 85, 126);
+$button-bg-alt: rgb(186, 30, 44);
+$button-font-color: rgb(255, 255, 255);
+$button-font-color-alt: rgb(255, 255, 255);
 $form-input-padding: 10px;
 
 // Typography

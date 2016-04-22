@@ -162,13 +162,15 @@ textarea:focus {
   color: $placeholder-color;
 }
 
+
 a,
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
 textarea:focus,
-.button {
+.button,
+.button-alt {
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition:    all 0.1s ease-in-out;
   -ms-transition:     all 0.1s ease-in-out;
@@ -180,13 +182,19 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-.button {
+.button,
+.button-alt {
+  -moz-appearance: none;
+  -webkit-appearance: none;
   background-color: $button-bg;
   border: none;
-  border-radius: em(5);
+  border-radius: 0;
   box-shadow: none;
   color: $button-font-color;
   cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1em;
   padding: em(10) em(15);
   width: auto;
 }
@@ -196,7 +204,23 @@ input:hover[type="button"],
 input:hover[type="reset"],
 input:hover[type="submit"],
 .button:hover {
+  color: $button-font-color;
   text-decoration: none;
+}
+
+.button-alt:hover {
+  color: $button-font-color-alt;
+}
+
+button[disabled],
+input[type=button][disabled],
+input[type=submit][disabled],
+input[type=reset][disabled],
+.button.disabled,
+.button-alt.disabled {
+  background: transparent;
+  border: 0;
+  color: gray;
 }
 
 input[type="search"]::-webkit-search-cancel-button,

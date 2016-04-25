@@ -125,17 +125,10 @@
   #MOBILE-NAVIGATION
 \*------------------------------------*/
 
-/* Small menu. */
 .menu-toggle {
 	display: inline-block;
-	left: calc(50% - 2.45em);
-	margin: 0;
-	position: relative;
-	top: 1em;
-
-	@include bp($big-mobile) {
-		left: calc(50% - 3em);
-	}
+	float: right;
+	margin: 1em;
 
 	@include bp($laptop) {
 		display: none;

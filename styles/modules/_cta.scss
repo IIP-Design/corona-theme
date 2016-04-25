@@ -12,20 +12,6 @@
   }
 }
 
-.cta-gradient {
-  background: rgba(0, 0, 0, 0.5);
-  bottom: 0;
-  height: 45vw;
-  left: 0;
-  position: absolute;
-  width: 100%;
-
-  @include bp($tablet) {
-    background: linear-gradient(0deg, rgb(0, 0, 0), transparent 60%, transparent);
-    height: 40vw;
-  }
-}
-
 .cta-text {
   bottom: 0;
   color: white;

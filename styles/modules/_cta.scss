@@ -29,7 +29,6 @@
 .cta-text {
   bottom: 0;
   color: white;
-  margin-bottom: 1em;
   padding: 0 2em;
   position: absolute;
   text-align: center;
@@ -43,7 +42,6 @@
 
   @include bp($tablet) {
     font-size: em(24, 16);
-    margin-bottom: em(16, 24);
   }
 
 }

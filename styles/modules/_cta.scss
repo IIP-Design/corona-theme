@@ -3,12 +3,26 @@
 \*------------------------------------*/
 
 .cta-container {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 45%;
   position: relative;
-  height: 90%;
-  margin-top: 17%;
 
   @include bp($laptop) {
     margin-top: 0;
+  }
+}
+
+.cta-gradient {
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+
+  @include bp($tablet) {
+    background: linear-gradient(0deg, rgb(0, 0, 0), transparent 60%, transparent);
   }
 }
 

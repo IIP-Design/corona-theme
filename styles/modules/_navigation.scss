@@ -5,12 +5,7 @@
 .nav-primary {
 	clear: both;
 	display: block;
-	float: left;
 	width: 100%;
-
-	@include bp($laptop) {
-		float: none;
-	}
 }
 
 .nav-primary ul {

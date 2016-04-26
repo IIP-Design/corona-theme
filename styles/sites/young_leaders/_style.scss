@@ -308,35 +308,41 @@ a:hover {
   @extend %visuallyhidden;
 }
 
+
+
+
 /*------------------------------------*\
-  #HOME POST LIST
+  #HOME-POST-LIST
 \*------------------------------------*/
 
 .post-list-container {
-  margin-top: 35px;
+  margin-top: em(35);
 }
 
-.post-list-container article { 
+.post-list-container .entry {
   float: left;
-  width: 33%;
+
+  @include bp($tablet) {
+    padding: 0 1em;
+    width: 33%;
+  }
 }
 
 .post-list-container h2 {
-  line-height: 1.2;
+  line-height: 1.2em;
 }
 
-.post-list-container h2 a  { 
-  color: #0d0d0d;
+.post-list-container h2 a  {
+  border: 0;
+  color: $font-color;
   text-decoration: none;
-  font-size: 20px;
+  font-size: em(20, 24);
+}
+
+.post-list-container .post-image-anchor {
+  border: 0;
 }
 
 .post-list-container .entry-content {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 16px;
-  color: #777777;
+  font-size: 1em;
 }
-
-
-
-

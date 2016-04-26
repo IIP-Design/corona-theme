@@ -102,7 +102,7 @@ class Corona_Shortcode_Post_List {
 				if ( has_post_thumbnail() ) {
 					$role = empty( $show_title) ? '' : 'aria-hidden="true"';
 					$image = get_the_post_thumbnail();
-				    $html .= '<a href="' .  get_permalink() . '" class="' . esc_attr( $image_alignment ) . '" ' . $role . '"">'. $image . '</a>';
+				    $html .= '<a class="post-image-anchor" href="' .  get_permalink() . '" class="' . esc_attr( $image_alignment ) . '" ' . $role . '"">'. $image . '</a>';
 				} 
 			}
 

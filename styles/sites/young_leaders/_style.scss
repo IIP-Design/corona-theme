@@ -18,7 +18,21 @@ p {
 }
 
 a {
+  border-bottom: 1px dotted $link-color;
   color: $link-color;
+  text-decoration: none;
+}
+
+a:visited {
+  border-bottom: 1px dotted $link-visited;
+  color: $link-visited;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 1px dotted $link-hover;
+  color: $link-hover;
+  text-decoration: none;
 }
 
 .site-container {
@@ -41,6 +55,16 @@ a {
   }
 }
 
+
+
+
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
+
+.site-header a {
+  border: 0;
+}
 
 
 
@@ -85,14 +109,11 @@ a {
   padding: em(12) em(15);
 }
 
-.menu-primary a:visited {
-  color: $link-color;
-}
-
+.menu-primary a:link,
+.menu-primary a:visited,
 .menu-primary a:hover {
-  color: lighten($link-color, 20%);
+  border: 0;
 }
-
 
 
 
@@ -117,6 +138,11 @@ a {
   margin: 0;
   padding: em(32, 14) em(32, 14) em(32, 14) em(85, 14);
 }
+
+.site-footer a {
+  border: 0;
+}
+
 
 .site-footer .widget {
   margin: 0;
@@ -172,6 +198,56 @@ a {
 
 
 /*------------------------------------*\
+  #FORMS
+\*------------------------------------*/
+
+.button,
+.button:link,
+.button:visited,
+.button:hover,
+.button:active,
+.button-alt,
+.button-alt:link,
+.button-alt:visited,
+.button-alt:hover,
+.button-alt:active {
+  border: 0;
+  text-decoration: none;
+}
+
+
+
+
+/*------------------------------------*\
+  #SIDEBAR
+\*------------------------------------*/
+
+.sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li::before {
+  content: '';
+  padding: 0;
+}
+
+.sidebar li {
+  list-style-type: none;
+  margin: 0;
+}
+
+.sidebar a,
+.sidebar a:link,
+.sidebar a:visited,
+.sidebar a:hover,
+.sidebar a:active {
+  border: 0;
+  text-decoration: none;
+}
+
+
+/*------------------------------------*\
   #WIDGET
 \*------------------------------------*/
 
@@ -179,38 +255,11 @@ a {
 .widget-title a,
 .widget_rss .widget-title a {
   font-size: em(18);
-  color: $link-color;
+  color: $font-color;
 }
 
 .rss-widget-icon {
   display: none;
-}
-
-.widget_recent_entries ul,
-.widget_rss ul {
-  margin: 0;
-  padding: 0;
-}
-
-.widget_recent_entries li,
-.widget_rss li {
-  border-top: 1px solid $border-color;
-  list-style-type: none;
-  margin: 0;
-  padding: em(10) 0;
-}
-
-.widget_recent_entries a,
-.widget_rss a {
-  color: $widget-font-color;
-  font-size: em(14);
-  line-height: em(23);
-  text-decoration: none;
-}
-
-.widget_recent_entries a:hover,
-.widget_rss a:hover {
-  color: $link-color;
 }
 
 

@@ -1,0 +1,14 @@
+.tbl-container {
+  display: table;
+}
+
+.tbl-row {
+  display: table-row;
+}
+
+.tbl-column {
+  display: table-cell;
+  padding: 5px;
+}
+
+.ui-dialog { z-index: 1000 !important ;}

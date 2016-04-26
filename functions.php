@@ -125,7 +125,6 @@ function corona_setup() {
 endif;
 add_action( 'after_setup_theme', 'corona_setup' );
 
-set_post_thumbnail_size( 300, 225, true );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

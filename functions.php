@@ -36,13 +36,15 @@ require TEMPLATE_DIR . '/inc/jetpack.php';
 /**
  * Load base widgets.
  */
-require TEMPLATE_DIR . '/inc/widgets/recent-post-list.php';
+//require TEMPLATE_DIR . '/inc/widgets/class-corona-widget-post-list.php';
 
 /**
  * Load base shortcodes.
  */
-require TEMPLATE_DIR . '/inc/shortcodes/post.php';
-
+require TEMPLATE_DIR . '/inc/shortcodes/shortcode-admin.php';
+require TEMPLATE_DIR . '/inc/shortcodes/class-corona-shortcode-post.php';
+require TEMPLATE_DIR . '/inc/shortcodes/class-corona-shortcode-post-list.php';
+require TEMPLATE_DIR . '/inc/shortcodes/class-corona-shortcode-cta.php';
 
 /**
  * Initialization
@@ -198,25 +200,29 @@ add_action( 'widgets_init', 'corona_widgets_init' );
 
 
 /**
- * Register widges.
+ * Register widgets.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function corona_register_widgets() {
-  register_widget( 'Corona_Recent_Post_List' );
+	register_widget( 'Corona_Post_List' );
 }
+//add_action( 'widgets_init', 'corona_register_widgets' );
 
-add_action( 'widgets_init', 'corona_register_widgets' );
+// Enable the use of shortcodes in text widgets.
+add_filter( 'widget_text', 'do_shortcode' );
 
 /**
  * Enqueue scripts and styles.
  */
 function corona_scripts() {
 	wp_enqueue_style( 'corona-style', get_stylesheet_uri() );
-	wp_enqueue_script( 'corona-js', get_template_directory_uri() . '/js/dist/script.js', array(), '', true );
+	wp_enqueue_script( 'corona-js', get_template_directory_uri() . '/js/dist/script.js', array(), '20160414', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'corona_scripts' );
+
+

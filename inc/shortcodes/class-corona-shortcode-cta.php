@@ -76,14 +76,14 @@ class Corona_Shortcode_CTA {
 		$html .= '<div class="cta-container">';
 		
 		if( $image_id ) {
-			$html .= wp_get_attachment_image ( $image_id, $size = '', $icon = false, $attr = '' );
+			$html .= wp_get_attachment_image ( $image_id, $size = '', $icon = false, $attr = array('class' => 'cta-image') );
 		}
 		
 		$html .= '<div class="cta-gradient"></div>';
-		$html .= '<div class="cta-text">' . $text;
+		$html .= '<div class="cta-text"><p>' . $text . '</p>';
 
 		if( $button ) {
-			$html .= '<a class="button cta-button" href="' . $button_link . '">' .$button_label . '</a>';
+			$html .= '<p><a class="button cta-button" href="' . $button_link . '">' .$button_label . '</a></p>';
 		}
 
 		$html .= '</div>';
@@ -115,6 +115,15 @@ corona_shortcode_cta();
 // 	<a class="button cta-button" href="https://ylai.edit.america.gov/fellowship/">apply now</a>
 
 // 	</div>
+// </div>
+
+// <div class="cta-container">
+//   <img class="cta-image" src="//localhost:3000/wp-content/uploads/2016/04/banner2.jpg" alt="President Obama shaking hands with honorees" />
+//   <div class="cta-gradient"></div>
+//   <div class="cta-text">
+//     <p>Develop as a leader, connect with peers across the region, and be the change you're looking for</p>
+//     <p><a class="button cta-button" href="/the-fellowship/">apply now</a></p>
+//   </div>
 // </div>
 
 

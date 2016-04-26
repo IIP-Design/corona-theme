@@ -220,3 +220,12 @@ function corona_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'corona_scripts' );
+
+
+/**
+	* Custom Hooks
+	*/
+
+function google_tag_manager() {
+  do_action( 'google_tag_manager' );
+}

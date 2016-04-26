@@ -21,6 +21,11 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<?php
+	if ( function_exists ( 'google_tag_manager' ) ) {
+		 google_tag_manager();
+	}?>
+
 <div class="site-container">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'corona' ); ?></a>
 

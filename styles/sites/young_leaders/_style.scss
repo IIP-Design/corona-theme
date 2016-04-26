@@ -258,3 +258,36 @@ a {
 .mc4wp-form-fields label {
   @extend %visuallyhidden;
 }
+
+/*------------------------------------*\
+  #HOME POST LIST
+\*------------------------------------*/
+
+.post-list-container {
+  margin-top: 35px;
+}
+
+.post-list-container article { 
+  float: left;
+  width: 33%;
+}
+
+.post-list-container h2 {
+  line-height: 1.2;
+}
+
+.post-list-container h2 a  { 
+  color: #0d0d0d;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.post-list-container .entry-content {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  color: #777777;
+}
+
+
+
+

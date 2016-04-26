@@ -36,12 +36,12 @@ require TEMPLATE_DIR . '/inc/jetpack.php';
 /**
  * Load base widgets.
  */
-require TEMPLATE_DIR . '/inc/widgets/recent-post-list.php';
+//require TEMPLATE_DIR . '/inc/widgets/recent-post-list.php';
 
 /**
  * Load base shortcodes.
  */
-require TEMPLATE_DIR . '/inc/shortcodes/post.php';
+//require TEMPLATE_DIR . '/inc/shortcodes/post.php';
 
 
 /**
@@ -202,11 +202,11 @@ add_action( 'widgets_init', 'corona_widgets_init' );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function corona_register_widgets() {
-  register_widget( 'Corona_Recent_Post_List' );
-}
+// function corona_register_widgets() {
+//   register_widget( 'Corona_Recent_Post_List' );
+// }
 
-add_action( 'widgets_init', 'corona_register_widgets' );
+// add_action( 'widgets_init', 'corona_register_widgets' );
 
 /**
  * Enqueue scripts and styles.

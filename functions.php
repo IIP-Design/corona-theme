@@ -9,6 +9,10 @@
 
 define( 'TEMPLATE_DIR', get_template_directory() );
 /**
+ * Corona Hooks
+ */
+require TEMPLATE_DIR . '/inc/hooks.php';
+/**
  * Implement the Custom Header feature.
  */
 require TEMPLATE_DIR . '/inc/custom-header.php';
@@ -221,13 +225,8 @@ add_action( 'wp_enqueue_scripts', 'corona_scripts' );
 
 
 /**
- * Custom Hooks
- */
-
-function google_tag_manager() {
-  do_action( 'google_tag_manager' );
-}
-
+  * Replace Customizer header image with a relative path since domain mapper doesn't map it to production
+  */
 function relative_header_image() {
 	$url = get_header_image();
 	$parsed = parse_url( $url );

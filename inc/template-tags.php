@@ -7,11 +7,11 @@
  * @package corona
  */
 
-if ( ! function_exists( 'corona_posted_on' ) ) :
+if ( ! function_exists( 'corona_posted_date_author' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function corona_posted_on() {
+function corona_posted_date_author() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -37,6 +37,7 @@ function corona_posted_on() {
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 }
+add_action( 'corona_posted_on', 'corona_posted_date_author' );
 endif;
 
 if ( ! function_exists( 'corona_entry_footer' ) ) :

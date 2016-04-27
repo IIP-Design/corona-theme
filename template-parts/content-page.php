@@ -19,10 +19,10 @@
 			if ( has_post_thumbnail() ) {
 				$role = empty( $instance['show_title'] ) ? '' : 'aria-hidden="true"';
 				$image = get_the_post_thumbnail();
-					printf( '<a href="%s" %s>%s</a>', get_permalink(), $role, $image );
+				echo ( $image );
 			}
 		?>
-		
+
 		<?php
 			the_content();
 

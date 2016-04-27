@@ -227,3 +227,10 @@ add_action( 'wp_enqueue_scripts', 'corona_scripts' );
 function google_tag_manager() {
   do_action( 'google_tag_manager' );
 }
+
+function relative_header_image() {
+	$url = get_header_image();
+	$parsed = parse_url( $url );
+	$path = $parsed['path'];
+	echo esc_url( $path );
+}

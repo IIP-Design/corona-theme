@@ -1,3 +1,11 @@
+/**
+  * Cross-browser styles for consistent select element styling.
+  *
+  * @author Filament Group
+  * @see https://github.com/filamentgroup/select-css
+  * @see 'styles/modules/_forms.scss'
+  */
+
 /*------------------------------------*\
   #SELECT-CSS
 \*------------------------------------*/
@@ -87,11 +95,9 @@ query but this is a demo. */
 
 
 
-
-
-/* ------------------------------------  */
-/* START OF UGLY BROWSER-SPECIFIC HACKS */
-/* ----------------------------------  */
+/*------------------------------------*\
+  #SELECT-CSS
+\*------------------------------------*/
 
 /* OPERA - Pre-Blink nix the custom arrow, go with a native select button to keep it simple. Targeted via this hack http://browserhacks.com/#hack-a3f166304aafed524566bc6814e1d5c7 */
 x:-o-prefocus, .custom-select::after {
@@ -130,9 +136,3 @@ x:-o-prefocus, .custom-select::after {
   color: transparent;
   text-shadow: 0 0 0 #000;
 }
-
-
-
-/* ------------------------------------  */
-/*  END OF UGLY BROWSER-SPECIFIC HACKS  */
-/* ------------------------------------  */

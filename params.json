@@ -1,6 +1,6 @@
 {
   "name": "Corona",
   "tagline": "A base theme developed for the Office of Design's Wordpress projects",
-  "body": "# Documentation\r\n\r\n## General Markup Structure\r\n\r\nSee the [Visual Markup Guide](https://iip-design.github.io/corona/markup-structure.html) to see how Corona's markup is structured.\r\n\r\nThe markup structure was heavily influenced by the [Genesis Framework](http://my.studiopress.com/themes/genesis/), and the Visual Markup Guide is forked from [Nathan Rice](http://www.nathanrice.net)'s invaluable [Genesis Visual Markup Guide](http://www.genesisframework.com/markup.php). It has been updated to reflect the changes we've made to Genesis' markup structure.",
+  "body": "# Documentation\r\n\r\n## General Markup Structure\r\n\r\nSee the [Visual Markup Guide](https://iip-design.github.io/corona/markup/) to see how Corona's markup is structured.\r\n\r\nThe markup structure was heavily influenced by the [Genesis Framework](http://my.studiopress.com/themes/genesis/), and the Visual Markup Guide is forked from [Nathan Rice](http://www.nathanrice.net)'s invaluable [Genesis Visual Markup Guide](http://www.genesisframework.com/markup.php). It has been updated to reflect the changes we've made to Genesis' markup structure.",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }

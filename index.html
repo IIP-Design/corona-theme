@@ -17,10 +17,7 @@
       <header>
         <h1>Corona</h1>
         <p>A base theme developed for the Office of Design&#39;s Wordpress projects</p>
-
         <p class="view"><a href="https://github.com/IIP-Design/corona">View the Project on GitHub <small>IIP-Design/corona</small></a></p>
-
-
         <ul>
           <li><a href="https://github.com/IIP-Design/corona/zipball/master">Download <strong>ZIP File</strong></a></li>
           <li><a href="https://github.com/IIP-Design/corona/tarball/master">Download <strong>TAR Ball</strong></a></li>
@@ -28,15 +25,28 @@
         </ul>
       </header>
       <section>
-        <h1>
-<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h1>
-
-<h2>
-<a id="general-markup-structure" class="anchor" href="#general-markup-structure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General Markup Structure</h2>
-
-<p>See the <a href="https://iip-design.github.io/corona/markup/">Visual Markup Guide</a> to see how Corona's markup is structured.</p>
-
-<p>The markup structure was heavily influenced by the <a href="http://my.studiopress.com/themes/genesis/">Genesis Framework</a>, and the Visual Markup Guide is forked from <a href="http://www.nathanrice.net">Nathan Rice</a>'s invaluable <a href="http://www.genesisframework.com/markup.php">Genesis Visual Markup Guide</a>. It has been updated to reflect the changes we've made to Genesis' markup structure.</p>
+        <h1><a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h1>
+        <h2><a id="general-markup-structure" class="anchor" href="#general-markup-structure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General Markup Structure</h2>
+        <p>See the <a href="https://iip-design.github.io/corona/markup/">Visual Markup Guide</a> to see how Corona's markup is structured.</p>
+        <p>The markup structure was heavily influenced by the <a href="http://my.studiopress.com/themes/genesis/">Genesis Framework</a>, and the Visual Markup Guide is forked from <a href="http://www.nathanrice.net">Nathan Rice</a>'s invaluable <a href="http://www.genesisframework.com/markup.php">Genesis Visual Markup Guide</a>. It has been updated to reflect the changes we've made to Genesis' markup structure.</p>
+      </section>
+      <section>
+        <h2><a id="development-setup" class="anchor" href="#development-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development Setup</h2>
+        <h3>Build Tools</h3>
+        <p>Corona uses NPM Scripts to run its build process. Checkout the package.json file to see what's included and version numbers. Here are the highlights:</p>
+        <ul>
+          <li><a href="http://sass-lang.com/">SASS</a></li>
+          <li><a href="https://github.com/postcss/postcss">PostCSS</a> + <a href="https://github.com/postcss/autoprefixer">autoprefixer</a>. We support browsers that are &gt;5%. See <a href="https://github.com/ai/browserslist#queries">Browserlists</a>.</li>
+          <li><a href="http://eslint.org/">ESLint</a> + AirBnb's <a href="https://github.com/airbnb/javascript">JavaScript style guide</a>.</li>
+          <li><a href="https://github.com/mishoo/UglifyJS">UglifyJS</a></li>
+          <li><a href="https://github.com/imagemin/imagemin">Imagemin</a></li>
+          <li><a href="https://www.browsersync.io/">BrowserSync</a></li>
+        </ul>
+        <p>In development, you should be able to watch for changes and recompile your assets by running:</p>
+        <div class="highlight highlight-source-shell"><pre>$ npm run watch</pre></div>
+        <p>For production, you can run:</p>
+        <div class="highlight highlight-source-shell"><pre>$ npm run prod</pre></div>
+        <p>If you need to compile Modernizr for <em>development only</em>, you can just run <code>npm run modernizr:dev</code> to run the development version.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/IIP-Design">IIP-Design</a></p>
@@ -44,6 +54,5 @@
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-
   </body>
 </html>

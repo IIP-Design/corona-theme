@@ -1,1 +1,2 @@
+.rtl .content-sidebar-wrap{margin:0 0 0 -25%;width:100%}@media (min-width: 64em){.rtl .content-sidebar-wrap{float:right}}.rtl .content,.rtl .sidebar-primary,.rtl .sidebar-secondary{padding:1em}.rtl .content{margin:0}@media (min-width: 64em){.rtl .content{float:right;padding-left:2em;width:67%}}.rtl .content.full-width{width:100%}.rtl .sidebar-primary,.rtl .sidebar-secondary{margin:0;overflow:hidden}@media (min-width: 64em){.rtl .sidebar-primary,.rtl .sidebar-secondary{float:left;padding-right:2em;width:33%}}.rtl .site-inner .widget-area{float:left;overflow:hidden;width:25%}
 

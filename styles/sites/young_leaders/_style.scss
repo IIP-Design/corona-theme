@@ -2,9 +2,15 @@
   #Young Leaders Styles
 \*------------------------------------*/
 
+/**
+  * Shared styles between YLSEALI, YALI, and YLAI.
+  */
+
+
+
 
 /*------------------------------------*\
-  #Base styles
+  #BASE
 \*------------------------------------*/
 
 body {
@@ -115,6 +121,9 @@ a:hover {
   border: 0;
 }
 
+.menu-primary a:visited {
+  color: $link-color;
+}
 
 
 
@@ -212,7 +221,16 @@ a:hover {
 .button-alt:hover,
 .button-alt:active {
   border: 0;
+  color: $button-font-color;
   text-decoration: none;
+}
+
+.button-alt,
+.button-alt:link,
+.button-alt:visited,
+.button-alt:hover,
+.button-alt:active {
+  background-color: $button-bg-alt;
 }
 
 

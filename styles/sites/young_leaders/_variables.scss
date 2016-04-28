@@ -1,5 +1,5 @@
 /*------------------------------------*\
-  #VARIABLE-OVERRIDES
+  #VARIABLES
 \*------------------------------------*/
 
 // Colors
@@ -17,8 +17,8 @@ $second-footer-bg: rgb(48, 48, 48);
 $second-footer-accent: rgb(153, 153, 153);
 
 // Form Variables
-$disabled-bg: #ccc;
-$disabled-font-color: #eee;
+$disabled-bg: rgb(204, 204, 204);
+$disabled-font-color: rgb(238, 238, 238);
 $disabled-border: darken($disabled-bg, 10%);
 $placeholder-color: rgb(79, 79, 79);
 $button-bg: rgb(16, 85, 126);

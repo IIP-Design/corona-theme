@@ -17,9 +17,15 @@ In development, you should be able to watch for changes and recompile your asset
 $ npm run watch
 ```
 
+For production, you can run:
+
+```bash
+$ npm run prod
+```
+
 If you need to compile Modernizr for *development only*, you can just run `npm run modernizr:dev` to run the development version.
 
 
 ## Documentation
 
-You can find more documentation in the [`docs`](docs) directory.
+See the complete [`documentation`](http://iip-design.github.io/corona/).

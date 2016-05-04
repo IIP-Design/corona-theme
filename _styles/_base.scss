@@ -95,6 +95,16 @@ hr {
   margin:0 0 em(20);
 }
 
+dt {
+  float: left;
+  width: em(175);
+}
+
+dd {
+  margin: 0 0 1em;
+  overflow: hidden;
+}
+
 @media print {
   body {
     color:#444;
@@ -207,3 +217,10 @@ header strong {
   font-size: em(14, 11);
   line-height: 1.5em;
 }
+
+
+
+
+/*------------------------------------*\
+  #DEFINITION-LISTS
+\*------------------------------------*/

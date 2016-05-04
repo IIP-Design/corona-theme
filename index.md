@@ -5,11 +5,15 @@ layout: default
 <section>
 # Documentation
 
+Corona doesn't really provide much in terms of visual styling; it primarily provides structure and some common, repeated functionality. Create a child theme for site-specific styles.
+</section>
+
+<section>
 ## Development Setup
 
 ### Build Tools
 
-Corona uses NPM Scripts to run its build process. Checkout the [`package.json`](package.json) file to see what's included and version numbers. Here are the highlights:
+Corona uses NPM scripts to run its build process. Checkout the [`package.json`](package.json) file to see what's included and version numbers. Here are the highlights:
 
 * [SASS](http://sass-lang.com/)
 * [PostCSS](https://github.com/postcss/postcss) + [autoprefixer](https://github.com/postcss/autoprefixer). We support browsers that are >5%. See [Browserlists](https://github.com/ai/browserslist#queries).
@@ -43,17 +47,16 @@ $ npm run prod
 </section>
 
 <section>
-## General Markup Structure
-
-See the [Visual Markup Guide](/markup/) to see how Corona's markup is structured.
-
-The markup structure was heavily influenced by the [Genesis Framework](http://my.studiopress.com/themes/genesis/), and the Visual Markup Guide is forked from [Nathan Rice](http://www.nathanrice.net/)'s invaluable [Genesis Visual Markup Guide](http://www.genesisframework.com/markup.php). It has been updated to reflect Corona's markup structure.
-</section>
 
 <section>
 ## Theme Hooks
 
-@todo
+`google_tag_manager`
+: Insert GTM code just after `<body>`.
+
+`corona_posted_on`
+: Change or remove 'Posted on \{\{date\}\} by \{\{author\}\}' output.
+
 </section>
 
 <section>
@@ -66,4 +69,36 @@ The markup structure was heavily influenced by the [Genesis Framework](http://my
 ## Templates
 
 @todo
+</section>
+
+
+<section>
+## Templates
+
+Generally speaking, The [Visual Markup Guide](/markup/) explains how Corona's markup is structured.
+
+The markup was heavily influenced by the [Genesis Framework](http://my.studiopress.com/themes/genesis/). The visual markup guide is forked from [Nathan Rice](http://www.nathanrice.net/)'s invaluable [Genesis Visual Markup Guide](http://www.genesisframework.com/markup.php). It has been updated to reflect Corona's structure.
+
+`page_full.php`
+: A full-width page template that doesn't include the primary and secondary sidebars.
+
+</section>
+
+<section>
+## Media Queries
+
+Corona is a mobile-first theme. Here are the SASS variables. The `em`s are calculated with a default, 16px font-size:
+
+`$big-mobile`
+: 25em; // 400px
+
+`$tablet`
+: 48em; // 768px
+
+`$laptop`
+: 64em; // 1024px
+
+`$desktop`
+: 75em; // 1200px
+
 </section>

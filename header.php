@@ -56,7 +56,9 @@
 		<?php
 			// only show if widgets are assigned to it
 			if( is_active_sidebar( 'header-right') ) {
+				echo('<aside class="header-widget-area">');
 				dynamic_sidebar( 'header-right' );
+				echo('</aside>');
 			}
 		?><!-- .header right widget area -->
 
@@ -69,7 +71,7 @@
       <span class="line"></span>
     </div>
 	</div>
-	<nav id="site-navigation" class="nav-primary" role="navigation">
+	<nav id="nav-primary" class="nav-primary" role="navigation">
 		<?php
  			$args = array(
  				'theme_location'	=> 'primary',
@@ -80,22 +82,20 @@
  			);
 			wp_nav_menu( $args );
 		?>
-    </nav><!-- .nav-primary-->
+  </nav><!-- .nav-primary-->
 
 		<?php
 			if ( has_nav_menu( 'secondary' ) ) {
-		    $html = '<nav class="nav-secondary" role="navigation">';
+		    echo('<nav class="nav-secondary" role="navigation">');
 		 			$args = array(
 		 				'theme_location'	=> 'secondary',
 		 				'menu_id'			=> 'menu-secondary',
 		 				'menu_class'		=> 'menu nav-menu menu-secondary',
 		 				'container_class' 	=> 'wrap',
 		 				'fallback_cb'    	=> ''
-
 		 			);
 					wp_nav_menu( $args );
-		  	$html .= '</nav><!-- .nav-secondary-->';
-				return $html;
+		  	echo('</nav><!-- .nav-secondary-->');
 			}
 		?>
 

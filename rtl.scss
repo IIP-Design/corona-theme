@@ -1,1 +1,8 @@
+/**
+  * SASS file that pulls in all the dependencies in the proper order
+  */
+
+@import 'styles/variables';
+@import 'styles/mixins';
+@import 'styles/layouts/sidebar-content';
 @import 'styles/rtl';

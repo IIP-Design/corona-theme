@@ -1,0 +1,93 @@
+.visual-markup-guide {
+	.navigation {
+		margin: 0;
+		padding: 0;
+	}
+
+	.navigation li::before {
+		content: '«';
+		font-size: em(20);
+		padding-right: 0.5em;
+	}
+
+	.navigation li {
+		list-style-type: none;
+		margin: 0 0 1em 0;
+	}
+
+	div:before,
+	div:after {
+		content: " ";
+		display: table;
+	}
+
+	div:after {
+		clear: both;
+	}
+
+	.box {
+		border: 1px solid $dark-gray;
+		box-sizing: border-box;
+		padding: 0.25em 1em;
+		margin: em(20) 0;
+		position: relative;
+	}
+
+	.label {
+		color: black;
+		margin: 0;
+		padding: 0;
+	}
+
+	.title-area {
+
+		@include bp($laptop) {
+			width: 35%;
+			float: left;
+		}
+	}
+
+	.header-widget-area {
+
+		@include bp($laptop) {
+			float: right;
+			width: 60%;
+		}
+	}
+
+	.content-sidebar-wrap {
+
+		@include bp($laptop) {
+			float: left;
+			width: 72%;
+		}
+	}
+
+	.content {
+		@include bp($laptop) {
+			float: left;
+			width: 62%;
+		}
+	}
+
+	.sidebar-primary {
+		@include bp($laptop) {
+			float: right;
+			width: 33%;
+		}
+	}
+
+	.sidebar-secondary {
+		@include bp($laptop) {
+			float: right;
+			width: 24%;
+		}
+	}
+
+	.site-footer {
+		@include bp($laptop) {
+			overflow: hidden;
+			width: 100%;
+		}
+	}
+}

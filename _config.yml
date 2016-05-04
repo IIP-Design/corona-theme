@@ -1,0 +1,6 @@
+exclude: [vendor, node_modules, Gemfile, Gemfile.lock, styles.scss, js/src, package.json]
+github: [metadata]
+kramdown:
+ input: GFM
+ hard_wrap: false
+ parse_block_html: true

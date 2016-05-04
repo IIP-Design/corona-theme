@@ -28,11 +28,20 @@ In development, you should be able to watch for changes and recompile your asset
 $ npm run watch
 ```
 
+#### Modernizr
+
 If you need to compile Modernizr for *development only*, you can run:
 
 ```bash
-npm run modernizr:dev
+$ npm run modernizr:dev
 ```
+
+It will generate `js/src/modernizr.dev.js` with all the options available in `node_modules/modernizr/lib/config-all.json`. which is why it's only suitable for in development. You'll have to run the following to add it to `js/dist/script.js`, which is already enqueued.
+
+```bash
+$ npm run js
+```
+
 </section>
 
 <section>
@@ -68,16 +77,9 @@ $ npm run prod
 <section>
 ## Templates
 
-@todo
-</section>
-
-
-<section>
-## Templates
-
 Generally speaking, The [Visual Markup Guide](/markup/) explains how Corona's markup is structured.
 
-The markup was heavily influenced by the [Genesis Framework](http://my.studiopress.com/themes/genesis/). The visual markup guide is forked from [Nathan Rice](http://www.nathanrice.net/)'s invaluable [Genesis Visual Markup Guide](http://www.genesisframework.com/markup.php). It has been updated to reflect Corona's structure.
+The markup was heavily influenced by the [Genesis Framework](http://my.studiopress.com/themes/genesis/). The guide is forked from [Nathan Rice](http://www.nathanrice.net/)'s invaluable [Genesis Visual Markup Guide](http://www.genesisframework.com/markup.php). It has been updated to reflect Corona's structure.
 
 `page_full.php`
 : A full-width page template that doesn't include the primary and secondary sidebars.
@@ -87,7 +89,7 @@ The markup was heavily influenced by the [Genesis Framework](http://my.studiopre
 <section>
 ## Media Queries
 
-Corona is a mobile-first theme. Here are the SASS variables. The `em`s are calculated with a default, 16px font-size:
+Corona is a mobile-first theme. Here are the SASS variables. The `em`s are calculated at the browser default font-size of 16px.
 
 `$big-mobile`
 : 25em; // 400px

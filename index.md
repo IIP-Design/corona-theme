@@ -13,7 +13,7 @@ Corona doesn't really provide much in terms of visual styling; it primarily prov
 
 ### Build Tools
 
-Corona uses NPM scripts to run its build process. Checkout the [`package.json`](package.json) file to see what's included and version numbers. Here are the highlights:
+Corona uses NPM scripts to run its build process. Checkout the [`package.json`](https://github.com/IIP-Design/corona/blob/master/package.json) file to see what's included and version numbers. Here are the highlights:
 
 * [SASS](http://sass-lang.com/)
 * [PostCSS](https://github.com/postcss/postcss) + [autoprefixer](https://github.com/postcss/autoprefixer). We support browsers that are >5%. See [Browserlists](https://github.com/ai/browserslist#queries).

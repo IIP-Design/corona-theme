@@ -77,7 +77,7 @@ $ npm run prod
 <section>
 ## Templates
 
-Generally speaking, The [Visual Markup Guide](/markup/) explains how Corona's markup is structured.
+Generally speaking, The <a href="{{ site.github.url }}/markup/">Visual Markup Guide</a> explains how Corona's markup is structured.
 
 The markup was heavily influenced by the [Genesis Framework](http://my.studiopress.com/themes/genesis/). The guide is forked from [Nathan Rice](http://www.nathanrice.net/)'s invaluable [Genesis Visual Markup Guide](http://www.genesisframework.com/markup.php). It has been updated to reflect Corona's structure.
 

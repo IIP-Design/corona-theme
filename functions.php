@@ -34,7 +34,7 @@ function corona_get_theme_version( $file ) {
 	return $version;
 }
 
-add_action( 'corona_pre_init', 'corona_get_theme_version', 1, 0 );
+add_action( 'corona_pre_init', 'corona_get_theme_version', 1, 1 );
 
 
 

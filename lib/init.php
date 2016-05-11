@@ -22,11 +22,22 @@ do_action( 'corona_pre_init' );
   * Define Corona's constants
   */
 
-function corona_constants() {
-  define( 'TEMPLATE_DIR', get_template_directory() );
+function corona_set_constants() {
+  $constants = array(
+    'TEMPLATE_DIR' => get_template_directory(),
+    'CORONA_THEME_VERSION' => corona_get_theme_version( get_template_directory() . '/version.json' ),
+  );
+
+  if ( has_filter( 'corona_add_constants' ) ) {
+    $constants = apply_filters( 'corona_add_constants', $constants );
+  }
+
+  foreach ( $constants as $key => $value ) {
+    define ( $key, $value );
+  }
 }
 
-add_action( 'corona_init', 'corona_constants' );
+add_action( 'corona_init', 'corona_set_constants' );
 
 
 
@@ -147,5 +158,8 @@ add_action( 'corona_init', 'corona_content_width' );
 
 
 
+/**
+  * Finally, run corona_init
+  */
 
 do_action( 'corona_init' );

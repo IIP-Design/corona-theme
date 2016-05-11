@@ -109,12 +109,13 @@ function corona_require() {
   require_once TEMPLATE_DIR . '/lib/inc/widgets.php';
   require_once TEMPLATE_DIR . '/lib/inc/customizer.php';
   require_once TEMPLATE_DIR . '/lib/inc/custom-header.php';
-  require_once TEMPLATE_DIR . '/lib/inc/template-tags.php';
   require_once TEMPLATE_DIR . '/lib/inc/extras.php';
   require_once TEMPLATE_DIR . '/lib/inc/shortcodes/shortcode-admin.php';
   require_once TEMPLATE_DIR . '/lib/inc/shortcodes/class-corona-shortcode-post.php';
   require_once TEMPLATE_DIR . '/lib/inc/shortcodes/class-corona-shortcode-post-list.php';
   require_once TEMPLATE_DIR . '/lib/inc/shortcodes/class-corona-shortcode-cta.php';
+  require_once TEMPLATE_DIR . '/lib/inc/theme-hook-alliance/tha-theme-hooks.php';
+  require_once TEMPLATE_DIR . '/lib/inc/template-tags.php';
 }
 
 add_action( 'corona_init', 'corona_require' );

@@ -1,9 +1,9 @@
 <?php
 
 /**
-  * Corona Hooks
+  * Corona Action Hooks
   *
-  * @since Corona 1.1
+  * @since Corona 2.0
   * @package WordPress
   * @subpackage corona
   */
@@ -30,7 +30,7 @@ function google_tag_manager() {
   * @since Corona 1.1
   * @package WordPress
   * @subpackage corona
-  * @see inc/template-tags.php
+  * @see lib/inc/template-tags.php
   */
 
 function corona_posted_on() {

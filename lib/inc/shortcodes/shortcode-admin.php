@@ -3,15 +3,15 @@
 /**
  * Load shortcode forms.
  */
-require TEMPLATE_DIR . '/inc/shortcodes/shortcode-admin-post-list.php'; 
-require TEMPLATE_DIR . '/inc/shortcodes/shortcode-admin-cta.php'; 
+require TEMPLATE_DIR . '/lib/inc/shortcodes/shortcode-admin-post-list.php'; 
+require TEMPLATE_DIR . '/lib/inc/shortcodes/shortcode-admin-cta.php'; 
 
 add_action('admin_enqueue_scripts', 'corona_add_dialog_box_scripts');
 function corona_add_dialog_box_scripts() {
 	// use wp_localize_script() to send js data
     wp_enqueue_script( 'jquery-ui-dialog', false, array('jquery') );
     wp_enqueue_style( 'jquery-style', '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css' );
-    wp_enqueue_style( 'shortcode-style', get_template_directory_uri() . '/inc/shortcodes/shortcodes.css' );
+    wp_enqueue_style( 'shortcode-style', get_template_directory_uri() . '/lib/inc/shortcodes/shortcodes.css' );
 }
 
 // register to add a button to TinyMCE meni
@@ -24,7 +24,7 @@ function corona_register_buttons( $buttons ) {
 // Add js plugin script to plugin array
 add_filter( 'mce_external_plugins', 'corona_add_buttons' );
 function corona_add_buttons( $plugin_array ) {
-	$plugin_array['coronashortcodes'] = get_template_directory_uri() . '/inc/shortcodes/shortcode-tinymce-button.js';
+	$plugin_array['coronashortcodes'] = get_template_directory_uri() . '/lib/inc/shortcodes/shortcode-tinymce-button.js';
     return $plugin_array;
 }
 

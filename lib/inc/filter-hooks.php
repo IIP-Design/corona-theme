@@ -23,15 +23,17 @@
 
 function corona_get_header_image_tag($html, $header, $attr) {
 	$header = get_custom_header();
-	$path = corona_get_relative_url( $header->src );
 
 	if ( empty( $header->url ) ) {
 		return '';
 	}
 
+	// Get relative path
+	$path = corona_get_relative_url( $header->url );
 	$width = absint( $header->width );
 	$height = absint( $header->height );
 
+	// Set src to relative path since domain mapper doesn't work here
 	$attr = array(
 		'src' => $path,
 	);
@@ -46,7 +48,7 @@ function corona_get_header_image_tag($html, $header, $attr) {
 		)
 	);
 
-	// Generate 'srcset' and 'sizes' if not already present.
+	// Generate 'srcset' and 'sizes' if not already present. NOTE: Domain mapper maps srcset correctly, so we leave it as is
 	if ( empty( $attr['srcset'] ) && ! empty( $header->attachment_id ) ) {
 		$image_meta = get_post_meta( $header->attachment_id, '_wp_attachment_metadata', true );
 		$size_array = array( $width, $height );

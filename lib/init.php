@@ -103,6 +103,7 @@ add_action( 'corona_init', 'corona_theme_support' );
 function corona_require() {
   require_once TEMPLATE_DIR . '/lib/inc/utilities.php';
   require_once TEMPLATE_DIR . '/lib/inc/action-hooks.php';
+  require_once TEMPLATE_DIR . '/lib/inc/filter-hooks.php';
   require_once TEMPLATE_DIR . '/lib/inc/enqueue-scripts.php';
   require_once TEMPLATE_DIR . '/lib/inc/enqueue-styles.php';
   require_once TEMPLATE_DIR . '/lib/inc/widgets.php';

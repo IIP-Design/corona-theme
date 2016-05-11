@@ -31,8 +31,8 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<?php if ( get_header_image() ) : ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<img src="<?php relative_header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="Site header image">
+			<a href="<?php echo esc_url( home_url() ); ?>" rel="home">
+				<?php the_header_image_tag(); ?>
 			</a>
 		<?php endif; // End header image check. ?>
 		<div class="title-area">

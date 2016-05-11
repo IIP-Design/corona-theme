@@ -15,11 +15,15 @@
  * @package corona
  */
 
+
+
+
 /**
  * Set up the WordPress core custom header feature.
  *
  * @uses corona_header_style()
  */
+
 function corona_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'corona_custom_header_args', array(
 		'default-image'          => '',
@@ -30,14 +34,20 @@ function corona_custom_header_setup() {
 		'wp-head-callback'       => 'corona_header_style',
 	) ) );
 }
+
 add_action( 'after_setup_theme', 'corona_custom_header_setup' );
 
+
+
+
 if ( ! function_exists( 'corona_header_style' ) ) :
+
 /**
  * Styles the header image and text displayed on the blog.
  *
  * @see corona_custom_header_setup().
  */
+
 function corona_header_style() {
 	$header_text_color = get_header_textcolor();
 

@@ -9,6 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
+
 function corona_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Header Right', 'corona' ),

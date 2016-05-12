@@ -9,8 +9,11 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div class="content-sidebar-wrap">
+
+		<?php tha_content_before(); ?>
+		<main id="main" class="content" role="main"><!-- post loop -->
+		<?php tha_content_top(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
@@ -57,8 +60,9 @@ get_header(); ?>
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 
+		<?php tha_content_bottom(); ?>
 		</main><!-- #main -->
-	</div><!-- #primary -->
+		<?php tha_content_after(); ?>
 
 <?php
 get_sidebar();

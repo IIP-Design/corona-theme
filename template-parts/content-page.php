@@ -6,13 +6,19 @@
  *
  * @package corona
  */
-
 ?>
 
+<?php tha_entry_before(); ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php tha_entry_top(); ?>
+
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
+
+	<?php tha_entry_content_before(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -33,6 +39,8 @@
 		?>
 	</div><!-- .entry-content -->
 
+	<?php tha_entry_content_after(); ?>
+
 	<footer class="entry-footer">
 		<?php
 			edit_post_link(
@@ -46,4 +54,9 @@
 			);
 		?>
 	</footer><!-- .entry-footer -->
+
+	<?php tha_entry_bottom(); ?>
+
 </article><!-- #post-## -->
+
+<?php tha_entry_after(); ?>

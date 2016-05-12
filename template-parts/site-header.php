@@ -9,7 +9,7 @@
 ?>
 
 <header id="masthead" class="site-header" role="banner">
-
+<?php tha_header_top(); ?>
 
   <?php if ( get_header_image() ) : ?>
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -46,5 +46,5 @@
       </aside>
   <?php endif; ?>
 
-
+<?php tha_header_bottom(); ?>
 </header><!-- #masthead -->

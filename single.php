@@ -10,9 +10,14 @@
 get_header(); ?>
 
 	<div class="content-sidebar-wrap">
-		<main id="main" class="content" role="main">
+
+		<?php tha_content_before(); ?>
+		<main id="main" class="content" role="main"><!-- post loop -->
+		<?php tha_content_top(); ?>
 
 			<?php
+			tha_content_while_before();
+			
 			while ( have_posts() ) : the_post();
 
 				get_template_part( 'template-parts/content', get_post_format() );
@@ -23,9 +28,13 @@ get_header(); ?>
 				endif;
 
 			endwhile; // End of the loop.
+
+			tha_content_while_after();
 			?>
 
+		<?php tha_content_bottom(); ?>
 		</main><!-- #main -->
+		<?php tha_content_after(); ?>
 
 <?php
 get_sidebar();

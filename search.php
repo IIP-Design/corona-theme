@@ -9,8 +9,11 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div class="content-sidebar-wrap">
+
+		<?php tha_content_before(); ?>
+		<main id="main" class="content" role="main"><!-- post loop -->
+		<?php tha_content_top(); ?>
 
 		<?php
 		if ( have_posts() ) : ?>
@@ -20,7 +23,8 @@ get_header(); ?>
 			</header><!-- .page-header -->
 
 			<?php
-			/* Start the Loop */
+			tha_content_while_before();
+
 			while ( have_posts() ) : the_post();
 
 				/**
@@ -32,6 +36,8 @@ get_header(); ?>
 
 			endwhile;
 
+			tha_content_while_after();
+
 			the_posts_navigation();
 
 		else :
@@ -40,8 +46,9 @@ get_header(); ?>
 
 		endif; ?>
 
+		<?php tha_content_bottom(); ?>
 		</main><!-- #main -->
-	</section><!-- #primary -->
+		<?php tha_content_after(); ?>
 
 <?php
 get_sidebar();

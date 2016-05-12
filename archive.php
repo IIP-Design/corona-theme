@@ -9,21 +9,25 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div class="content-sidebar-wrap">
+
+		<?php tha_content_before(); ?>
+		<main id="main" class="content" role="main"><!-- post loop -->
+		<?php tha_content_top(); ?>
 
 		<?php
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_title( '<h1 class="entry-title">', '</h1>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 
 			<?php
-			/* Start the Loop */
+			tha_content_while_before();
+
 			while ( have_posts() ) : the_post();
 
 				/*
@@ -35,6 +39,8 @@ get_header(); ?>
 
 			endwhile;
 
+			tha_content_while_after();
+
 			the_posts_navigation();
 
 		else :
@@ -43,8 +49,9 @@ get_header(); ?>
 
 		endif; ?>
 
+		<?php tha_content_bottom(); ?>
 		</main><!-- #main -->
-	</div><!-- #primary -->
+		<?php tha_content_after(); ?>
 
 <?php
 get_sidebar();

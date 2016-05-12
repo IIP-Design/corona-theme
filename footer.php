@@ -2,38 +2,36 @@
 /**
  * The template for displaying the footer.
  *
- * Contains the closing of the #content div and all content after.
+ * Contains the closing of the .site-inner and .site-container content divs.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package corona
+ * @package Wordpress
+ * @subpackage corona
+ * @since Corona 2.0
  */
-
 ?>
 
 	</div><!-- .site-inner -->
 
+	<?php tha_footer_before(); ?>
+
 	<footer class="site-footer">
 
-	<?php
-			// only show if widgets are assigned to it
-			if( is_active_sidebar( 'footer-1') ) {
-				echo ('<div class="footer-1">');
-					dynamic_sidebar( 'footer-1' );
-				echo ('</div>');
-			}
-
-			if( is_active_sidebar( 'footer-2') ) {
-				echo ('<div class="footer-2">');
-					dynamic_sidebar( 'footer-2' );
-				echo ('</div>');
-			}
-		?><!-- .footer -->
+		<?php
+			tha_footer_top();
+			get_template_part( 'template-parts/site', 'footer' );
+			tha_footer_bottom();
+		?>
 
 	</footer><!-- .site-footer -->
+
+	<?php tha_footer_after(); ?>
+
 </div><!-- .site-container -->
 
-<?php wp_footer(); ?>
+<?php
+	tha_body_bottom();
+	wp_footer();
+?>
 
 </body>
 </html>

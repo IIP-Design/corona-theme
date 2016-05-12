@@ -36,19 +36,7 @@ function corona_posted_on() {
   */
 
 function corona_get_menu( $menu ) {
-  $menus = get_registered_nav_menus();
-
-  if ( in_array( $menu, $menus ) === 0 ):
-    return;
-  endif;
-
-  foreach ( $menus as $location => $description ) :
-
-    if ( $menu == $location ) :
-      do_action( 'corona_get_menu', $menu );
-    endif;
-
-  endforeach;
+  corona_generate_menu_hook( $menu, 'corona_get_menu' );
 }
 
 
@@ -125,19 +113,7 @@ function corona_menu_after() {
   */
 
 function corona_menu_top( $menu ) {
-  $menus = get_registered_nav_menus();
-
-  if ( in_array( $menu, $menus ) === 0 ):
-    return;
-  endif;
-
-  foreach ( $menus as $location => $description ) :
-
-    if ( $menu == $location ) :
-      do_action( 'corona_menu_top', $menu );
-    endif;
-
-  endforeach;
+  corona_generate_menu_hook( $menu, 'corona_menu_top' );
 }
 
 
@@ -154,17 +130,5 @@ function corona_menu_top( $menu ) {
   */
 
 function corona_menu_bottom( $menu ) {
-  $menus = get_registered_nav_menus();
-
-  if ( in_array( $menu, $menus ) === 0 ):
-    return;
-  endif;
-
-  foreach ( $menus as $location => $description ) :
-
-    if ( $menu == $location ) :
-      do_action( 'corona_menu_bottom', $menu );
-    endif;
-
-  endforeach;
+  corona_generate_menu_hook( $menu, 'corona_menu_bottom' );
 }

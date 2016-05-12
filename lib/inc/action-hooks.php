@@ -53,3 +53,33 @@ function corona_get_nav_primary() {
 function corona_get_nav_secondary() {
   do_action( 'corona_get_nav_secondary' );
 }
+
+
+
+
+/**
+  * Hook before Corona's Secondary Sidebar
+  *
+  * @package Wordpress
+  * @subpackage corona
+  * @since Corona 2.0
+  */
+
+function corona_sidebar_secondary_top() {
+  do_action( 'corona_sidebar_secondary_top' );
+}
+
+
+
+
+/**
+  * Hook after Corona's Secondary Sidebar
+  *
+  * @package Wordpress
+  * @subpackage corona
+  * @since Corona 2.0
+  */
+
+function corona_sidebar_secondary_bottom() {
+  do_action( 'corona_sidebar_secondary_bottom' );
+}

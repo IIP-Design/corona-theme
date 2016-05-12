@@ -20,22 +20,20 @@
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
   <nav id="nav-primary" class="nav-primary" role="navigation">
 
-    <?php
-      // See lib/menus.php for menu details
-      corona_get_nav_primary();
-    ?>
+    <?php corona_menu_top( 'primary' ); ?>
+    <?php corona_get_menu( 'primary' ); ?>
+    <?php corona_menu_bottom( 'primary' ); ?>
 
   </nav><!-- .nav-primary -->
 <?php endif; ?>
 
 
 <?php if ( has_nav_menu( 'secondary' ) ) : ?>
-  <nav class="nav-secondary" role="navigation">
+  <nav id="nav-secondary" class="nav-secondary" role="navigation">
 
-    <?php
-      // See lib/menu.php for menu details
-      corona_get_nav_secondary();
-    ?>
+    <?php corona_menu_top( 'secondary' ); ?>
+    <?php corona_get_menu( 'secondary' ); ?>
+    <?php corona_menu_bottom( 'secondary' ); ?>
 
   </nav><!-- .nav-secondary -->
 <?php endif; ?>

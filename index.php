@@ -15,7 +15,10 @@
 get_header(); ?>
 
 	<div class="content-sidebar-wrap">
+
+		<?php tha_content_before(); ?>
 		<main id="main" class="content" role="main"><!-- post loop -->
+		<?php tha_content_top(); ?>
 
 		<?php
 		if ( have_posts() ) :
@@ -28,7 +31,8 @@ get_header(); ?>
 			<?php
 			endif;
 
-			/* Start the Loop */
+			tha_content_while_before();
+
 			while ( have_posts() ) : the_post();
 
 				/*
@@ -39,6 +43,8 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', get_post_format() );
 
 			endwhile;
+			
+			tha_content_while_after();
 
 		else :
 
@@ -46,7 +52,9 @@ get_header(); ?>
 
 		endif; ?>
 
+		<?php tha_content_bottom(); ?>
 		</main><!-- #main -->
+		<?php tha_content_after(); ?>
 
 <?php
 get_sidebar();

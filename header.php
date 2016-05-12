@@ -29,7 +29,12 @@
 	<div class="site-container">
 		<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'corona' ); ?></a>
 
+		<?php tha_header_before(); ?>
 		<?php get_template_part( 'template-parts/site', 'header' ); ?>
+		<?php tha_header_after(); ?>
+
+		<?php corona_menu_before(); ?>
 		<?php get_template_part( 'template-parts/site', 'menu' ); ?>
+		<?php corona_menu_after(); ?>
 
 		<div id="content" class="site-inner">

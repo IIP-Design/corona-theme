@@ -128,7 +128,7 @@ add_action( 'corona_init', 'corona_require' );
   * Corona nav menus
   */
 
-function corona_menus() {
+function corona_init_menus() {
 	register_nav_menus(
     array(
   		'primary' => esc_html__( 'Primary', 'Primary navigation' ),
@@ -137,7 +137,7 @@ function corona_menus() {
   );
 }
 
-add_action( 'corona_init', 'corona_menus' );
+add_action( 'corona_init', 'corona_init_menus' );
 
 
 

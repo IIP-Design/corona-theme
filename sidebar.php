@@ -54,13 +54,11 @@
 		<?php // only show if widgets are assigned to it
 		if( is_active_sidebar('sidebar-secondary') ) : ?>
 
-			<?php corona_sidebar_secondary_top(); ?>
-
 			<aside class="sidebar sidebar-secondary">
+				<?php corona_sidebar_secondary_top(); ?>
 				<?php dynamic_sidebar( 'sidebar-secondary' ); ?>
+				<?php corona_sidebar_secondary_bottom(); ?>
 			</aside>
-
-			<?php corona_sidebar_secondary_bottom(); ?>
 
 		<?php endif; // end secondary sidebar
 	} // end check for america_sidebar ?>

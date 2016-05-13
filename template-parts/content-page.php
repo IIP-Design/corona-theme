@@ -24,7 +24,7 @@
 		<?php
 			if ( has_post_thumbnail() ) {
 				$role = empty( $instance['show_title'] ) ? '' : 'aria-hidden="true"';
-				$image = get_the_post_thumbnail();
+				$image = get_the_post_thumbnail( 'medium_large' );
 				echo ( $image );
 			}
 		?>
@@ -41,19 +41,7 @@
 
 	<?php tha_entry_content_after(); ?>
 
-	<footer class="entry-footer">
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'corona' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-		?>
-	</footer><!-- .entry-footer -->
+	<footer class="entry-footer"></footer><!-- .entry-footer -->
 
 	<?php tha_entry_bottom(); ?>
 

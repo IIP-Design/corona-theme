@@ -29,9 +29,9 @@ class Corona_Shortcode_Post_List {
 			self::$_instance = new self( $file );
 		}
 		return self::$_instance;
-	} 
+	}
 
-	
+
 	public function __construct( $file ) {
 		$this->file = $file;
 
@@ -42,7 +42,7 @@ class Corona_Shortcode_Post_List {
 	public function corona_enqueue_scripts () {
 	}
 
-	public function corona_shortcode_post_list( $atts ) { 
+	public function corona_shortcode_post_list( $atts ) {
 
 		$defaults = array(
 			'title'  					=> '',
@@ -85,7 +85,7 @@ class Corona_Shortcode_Post_List {
 		$html = '<div class="post-list-container">';
 
 		$html .= $before;
-		
+
 		$query_args = array(
 			'post_type'           => 'post',
 			'category_name'       => $posts_cat,
@@ -95,15 +95,15 @@ class Corona_Shortcode_Post_List {
 		$wp_query = new WP_Query( $query_args );
 
 		if ( have_posts() ) : while ( have_posts() ) : the_post();
-	    
+
 		    $html .= '<article id="post-' . get_the_ID() . '" class="' . implode(' ', get_post_class( 'entry')) . '">';
-			
+
 			if ( $show_image ) {
 				if ( has_post_thumbnail() ) {
 					$role = empty( $show_title) ? '' : 'aria-hidden="true"';
-					$image = get_the_post_thumbnail();
+					$image = get_the_post_thumbnail( $post, 'medium_large' );
 				    $html .= '<a class="post-image-anchor" href="' .  get_permalink() . '" class="' . esc_attr( $image_alignment ) . '" ' . $role . '"">'. $image . '</a>';
-				} 
+				}
 			}
 
 			if ( $show_title ) {
@@ -116,7 +116,7 @@ class Corona_Shortcode_Post_List {
 
 				if ( ! empty( $show_byline ) && ! empty( $post_info ) )
 					$html .= '<p class="entry-meta">' . do_shortcode( $post_info) . '</p>';
-				
+
 				$html .= '</header>';
 			}
 
@@ -148,7 +148,7 @@ class Corona_Shortcode_Post_List {
 				}
 		 		$html .= '</article>';
 			}
-			
+
 		endwhile; endif;
 
 		$html .= '</div>';
@@ -171,5 +171,3 @@ function corona_shortcode_post_list () {
 }
 
 corona_shortcode_post_list();
-
-

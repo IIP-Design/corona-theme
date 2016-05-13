@@ -6,7 +6,6 @@
  *
  * @package corona
  */
-
 ?>
 
 <section class="no-results not-found">

@@ -6,19 +6,25 @@
  *
  * @package corona
  */
-
 ?>
 
+<?php tha_entry_before(); ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php tha_entry_top(); ?>
+
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
+
+	<?php tha_entry_content_before(); ?>
 
 	<div class="entry-content">
 		<?php
 			if ( has_post_thumbnail() ) {
 				$role = empty( $instance['show_title'] ) ? '' : 'aria-hidden="true"';
-				$image = get_the_post_thumbnail();
+				$image = get_the_post_thumbnail( 'medium_large' );
 				echo ( $image );
 			}
 		?>
@@ -33,17 +39,12 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'corona' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-		?>
-	</footer><!-- .entry-footer -->
+	<?php tha_entry_content_after(); ?>
+
+	<footer class="entry-footer"></footer><!-- .entry-footer -->
+
+	<?php tha_entry_bottom(); ?>
+
 </article><!-- #post-## -->
+
+<?php tha_entry_after(); ?>

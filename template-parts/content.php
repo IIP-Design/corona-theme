@@ -6,10 +6,14 @@
  *
  * @package corona
  */
-
 ?>
 
+<?php tha_entry_before(); ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry'); ?>>
+
+	<?php tha_entry_top(); ?>
+
 	<header class="entry-header">
 		<?php
 			if ( is_single() ) {
@@ -20,11 +24,13 @@
 		?>
 	</header><!-- .entry-header -->
 
+	<?php tha_entry_content_before(); ?>
+
 	<div class="entry-content">
 		<?php
 			if ( has_post_thumbnail() ) {
 				$role = empty( $instance['show_title'] ) ? '' : 'aria-hidden="true"';
-				$image = get_the_post_thumbnail();
+				$image = get_the_post_thumbnail( $post, 'medium_large' );
 				echo ( $image );
 			}
 		?>
@@ -51,7 +57,14 @@
 		?>
 	</div><!-- .entry-content -->
 
+	<?php tha_entry_content_after(); ?>
+
 	<footer class="entry-footer">
 		<?php corona_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+
+	<?php tha_entry_bottom(); ?>
+
 </article><!-- #post-## -->
+
+<?php tha_entry_after(); ?>

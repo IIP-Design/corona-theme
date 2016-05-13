@@ -8,9 +8,11 @@
  */
 
 if ( ! function_exists( 'corona_posted_date_author' ) ) :
+
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
+
 function corona_posted_date_author() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -37,13 +39,16 @@ function corona_posted_date_author() {
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 }
+
 add_action( 'corona_posted_on', 'corona_posted_date_author' );
 endif;
 
 if ( ! function_exists( 'corona_entry_footer' ) ) :
+
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
+
 function corona_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
@@ -66,24 +71,18 @@ function corona_entry_footer() {
 		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'corona' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 		echo '</span>';
 	}
-
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'corona' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'<span class="edit-link">',
-		'</span>'
-	);
 }
 endif;
+
+
+
 
 /**
  * Returns true if a blog has more than 1 category.
  *
  * @return bool
  */
+
 function corona_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'corona_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
@@ -109,9 +108,13 @@ function corona_categorized_blog() {
 	}
 }
 
+
+
+
 /**
  * Flush out the transients used in corona_categorized_blog.
  */
+
 function corona_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
@@ -119,5 +122,6 @@ function corona_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'corona_categories' );
 }
+
 add_action( 'edit_category', 'corona_category_transient_flusher' );
 add_action( 'save_post',     'corona_category_transient_flusher' );

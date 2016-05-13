@@ -9,8 +9,11 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div class="content-sidebar-wrap">
+
+		<?php tha_content_before(); ?>
+		<main id="main" class="content" role="main"><!-- post loop -->
+		<?php tha_content_top(); ?>
 
 		<?php
 		if ( have_posts() ) : ?>
@@ -20,7 +23,8 @@ get_header(); ?>
 			</header><!-- .page-header -->
 
 			<?php
-			/* Start the Loop */
+			tha_content_while_before();
+
 			while ( have_posts() ) : the_post();
 
 				/**
@@ -28,11 +32,11 @@ get_header(); ?>
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'search' );
+				get_template_part( 'template-parts/content', 'search_archive' );
 
 			endwhile;
 
-			the_posts_navigation();
+			tha_content_while_after();
 
 		else :
 
@@ -40,8 +44,9 @@ get_header(); ?>
 
 		endif; ?>
 
+		<?php tha_content_bottom(); ?>
 		</main><!-- #main -->
-	</section><!-- #primary -->
+		<?php tha_content_after(); ?>
 
 <?php
 get_sidebar();

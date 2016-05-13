@@ -4,7 +4,7 @@
   "description": " A base Wordpress installation",
   "main": "index.php",
   "scripts": {
-    "sass:ltr": "node-sass --output-style compressed style.scss > style.css",
+    "sass:ltr": "node-sass --importer node_modules/node-sass-json-importer/dist/node-sass-json-importer.js --output-style compressed style.scss > style.css",
     "sass:rtl": "node-sass --output-style compressed rtl.scss > rtl.css",
     "sass": "npm run sass:ltr && npm run sass:rtl",
     "autoprefixer": "postcss -m -u autoprefixer --autoprefixer.browsers '> 5%' style.css -o style.css",
@@ -13,13 +13,14 @@
     "uglify": "uglifyjs js/src/*.js -o js/dist/script.js",
     "js": "npm run eslint && npm run uglify",
     "imagemin": "imagemin images/src/* images/dist",
-    "server": "browser-sync start --proxy 'corona.dev' --files './*.php' 'template-parts/*.php' 'page-templates/*.php' 'inc/*.php' 'style.css' 'rtl.css' 'images/dist/*' 'js/dist/*.js'",
+    "server": "browser-sync start --proxy 'corona.dev' --files './*.php' 'template-parts/*.php' 'page-templates/*.php' 'lib/inc/*.php' 'style.css' 'rtl.css' 'images/dist/*' 'js/dist/*.js'",
     "watch:sass": "onchange ./styles/**/*.scss ./styles/*.scss ./style.scss ./rtl.scss -- npm run css",
     "watch:js": "onchange ./js/src/*.js -v -- npm run js",
     "watch:image": "onchange ./images/src/* -- npm run imagemin",
     "watch": "parallelshell 'npm run server' 'npm run watch:sass' 'npm run watch:js' 'npm run watch:image'",
     "modernizr:dev": "node_modules/modernizr/bin/modernizr -c node_modules/modernizr/lib/config-all.json -d js/src/modernizr.dev.js",
-    "prod": "parallelshell 'npm run css' 'npm run uglify' 'npm run imagemin'"
+    "prod": "parallelshell 'npm run css' 'npm run uglify' 'npm run imagemin'",
+    "version": "versionbump 'version.json' 'package.json' && npm run prod && git add --all"
   },
   "repository": {
     "type": "git",
@@ -40,10 +41,12 @@
     "eslint-plugin-react": "^4.3.0",
     "imagemin-cli": "^2.1.0",
     "node-sass": "^3.4.2",
+    "node-sass-json-importer": "^1.0.6",
     "onchange": "^2.3.0",
     "parallelshell": "^2.0.0",
     "postcss-cli": "^2.5.1",
-    "uglify-js": "^2.6.2"
+    "uglify-js": "^2.6.2",
+    "versionbump": "git+ssh://git@github.com/IIP-Design/versionbump.git"
   },
   "dependencies": {
     "modernizr": "^3.3.1",

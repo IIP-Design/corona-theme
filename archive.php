@@ -9,21 +9,25 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div class="content-sidebar-wrap">
+
+		<?php tha_content_before(); ?>
+		<main id="main" class="content" role="main"><!-- post loop -->
+		<?php tha_content_top(); ?>
 
 		<?php
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_title( '<h1 class="entry-title">', '</h1>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 
 			<?php
-			/* Start the Loop */
+			tha_content_while_before();
+
 			while ( have_posts() ) : the_post();
 
 				/*
@@ -31,11 +35,11 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( 'template-parts/content', 'search_archive' );
 
 			endwhile;
 
-			the_posts_navigation();
+			tha_content_while_after();
 
 		else :
 
@@ -43,8 +47,9 @@ get_header(); ?>
 
 		endif; ?>
 
+		<?php tha_content_bottom(); ?>
 		</main><!-- #main -->
-	</div><!-- #primary -->
+		<?php tha_content_after(); ?>
 
 <?php
 get_sidebar();

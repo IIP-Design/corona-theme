@@ -27,6 +27,7 @@ textarea {
   border: $border;
   border-radius: 0;
   box-shadow: none;
+  box-sizing: border-box;
   color: $placeholder-color;
   font-size: em(14);
   padding: $form-input-padding;
@@ -234,25 +235,16 @@ input[type="search"]::-webkit-search-results-button {
   display: none;
 }
 
-.search input[type="submit"],
-.widget_search input[type="submit"] {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+.search-form {
+  overflow: hidden;
 }
 
 .search-form input[type="search"] {
   background: white url(images/dist/icon-search.png) no-repeat right;
   background-size: 36px 16px;
   color: $placeholder-color;
-  font-size: 10px;
   margin-bottom: 10px;
   padding: $form-input-padding;
-  text-transform: uppercase;
   width: 100%;
 }
 

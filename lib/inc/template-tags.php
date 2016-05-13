@@ -71,16 +71,6 @@ function corona_entry_footer() {
 		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'corona' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 		echo '</span>';
 	}
-
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'corona' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'<span class="edit-link">',
-		'</span>'
-	);
 }
 endif;
 

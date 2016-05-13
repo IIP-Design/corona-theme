@@ -30,6 +30,12 @@ h1, h2, h3 {
   line-height: 1.1;
 }
 
+h3 {
+  border-bottom: 1px dotted $font-color;
+  margin-top: 2.25em;
+  padding: 0 0 0.5em;
+}
+
 a {
   color: $link-color;
   text-decoration: none;
@@ -55,14 +61,16 @@ blockquote {
 code, pre {
   font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
   font-size: em(14, 16);
+  line-height: 1em;
 }
 
 pre {
   background: $background;
   border: $border;
   border-radius: $border-radius;
-  overflow-x: auto;
+  overflow: auto;
   padding: em(8) em(15);
+  white-space: pre;
 }
 
 table {
@@ -96,13 +104,12 @@ hr {
 }
 
 dt {
-  float: left;
-  width: em(175);
+  font-weight: bold;
+  margin: 1.25em 0 0 0;
 }
 
 dd {
-  margin: 0 0 1em;
-  overflow: hidden;
+  margin: 1em 0 1em 1.5em;
 }
 
 @media print {

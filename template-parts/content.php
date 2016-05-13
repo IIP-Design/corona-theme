@@ -30,7 +30,7 @@
 		<?php
 			if ( has_post_thumbnail() ) {
 				$role = empty( $instance['show_title'] ) ? '' : 'aria-hidden="true"';
-				$image = get_the_post_thumbnail();
+				$image = get_the_post_thumbnail( $post, 'medium_large' );
 				echo ( $image );
 			}
 		?>

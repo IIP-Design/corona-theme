@@ -77,3 +77,23 @@ function corona_get_header_image_tag($html, $header, $attr) {
 }
 
 add_filter( 'get_header_image_tag', 'corona_get_header_image_tag', 10, 3 );
+
+
+
+
+/**
+  * Filters the output of the_excerpt() 'Read More'
+  *
+  * @package Wordpress
+  * @subpackage corona
+  * @since Corona 2.0
+  */
+
+function corona_excerpt_read_more( $more ) {
+	global $post;
+	$read_more = __( 'Read More', 'corona' );
+
+	return ' &hellip; <a class="read-more" href="">' . $read_more . '&nbsp;&raquo; </a>';
+}
+
+add_filter( 'excerpt_more', 'corona_excerpt_read_more' );

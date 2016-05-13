@@ -15,6 +15,8 @@
 
 	<?php tha_entry_top(); ?>
 
+	<?php the_post_thumbnail( 'medium_large' ); ?>
+
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
@@ -37,7 +39,7 @@
 		<?php corona_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
-	<?php tha_entry_bottom(); ?>f
+	<?php tha_entry_bottom(); ?>
 
 </article><!-- #post-## -->
 

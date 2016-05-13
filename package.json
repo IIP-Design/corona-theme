@@ -19,7 +19,8 @@
     "watch:image": "onchange ./images/src/* -- npm run imagemin",
     "watch": "parallelshell 'npm run server' 'npm run watch:sass' 'npm run watch:js' 'npm run watch:image'",
     "modernizr:dev": "node_modules/modernizr/bin/modernizr -c node_modules/modernizr/lib/config-all.json -d js/src/modernizr.dev.js",
-    "prod": "parallelshell 'npm run css' 'npm run uglify' 'npm run imagemin'"
+    "prod": "parallelshell 'npm run css' 'npm run uglify' 'npm run imagemin'",
+    "version": "versionbump 'version.json' 'package.json' && npm run prod && git add --all"
   },
   "repository": {
     "type": "git",
@@ -44,7 +45,8 @@
     "onchange": "^2.3.0",
     "parallelshell": "^2.0.0",
     "postcss-cli": "^2.5.1",
-    "uglify-js": "^2.6.2"
+    "uglify-js": "^2.6.2",
+    "versionbump": "git+ssh://git@github.com/IIP-Design/versionbump.git"
   },
   "dependencies": {
     "modernizr": "^3.3.1",

@@ -23,6 +23,10 @@
 	*/
 
 function corona_get_theme_version( $file ) {
+	if ( $file == '') {
+		return;
+	}
+
 	$contents = file_get_contents( $file );
 
 	$json = json_decode($contents, true);

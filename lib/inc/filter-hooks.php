@@ -97,3 +97,40 @@ function corona_excerpt_read_more( $more ) {
 }
 
 add_filter( 'excerpt_more', 'corona_excerpt_read_more' );
+
+
+
+
+/**
+	* Wrap most common oEmbed video providers in responsive media container
+	*
+	* @package Wordpress
+	* @subpackage corona
+	* @since Corona 2.1
+	*/
+
+function corona_responsive_oembed_videos( $html, $url, $attr ) {
+	$providers = array(
+		"youtube.com/",
+		"vimeo.com/",
+		"vine.co/",
+		"ted.com/",
+	);
+
+	if ( has_filter( 'corona_video_providers' ) ) {
+		$providers = apply_filters( 'corona_video_providers', $providers );
+	}
+
+	foreach ( $providers as $provider )  {
+		if ( strstr ( $html, $provider ) ) {
+			$cached_html = $html;
+			$html = '<div class="media-container responsive">';
+			 	$html .= $cached_html;
+			$html .= '</div>';
+		}
+	}
+
+	return $html;
+}
+
+add_filter( 'embed_oembed_html', 'corona_responsive_oembed_videos' );

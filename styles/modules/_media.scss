@@ -48,3 +48,27 @@
 .gallery-caption {
 	display: block;
 }
+
+
+
+
+/*------------------------------------*\
+  #MEDIA-CONTAINER
+\*------------------------------------*/
+
+// .media-container has 16:9 aspect ratio
+.media-container {
+	position: relative;
+
+	&.responsive {
+		padding: 0 0 56.25%;
+	}
+	
+	&.responsive iframe {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}

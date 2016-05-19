@@ -16,7 +16,7 @@ Corona doesn't really provide much in terms of visual styling; it primarily prov
 Corona uses NPM scripts to run its build process. Checkout the [`package.json`](https://github.com/IIP-Design/corona/blob/master/package.json) file to see what's included and version numbers. Here are the highlights:
 
 * [SASS](http://sass-lang.com/)
-* [PostCSS](https://github.com/postcss/postcss) + [autoprefixer](https://github.com/postcss/autoprefixer). We support browsers that are >5%. See [Browserlists](https://github.com/ai/browserslist#queries).
+* [PostCSS](https://github.com/postcss/postcss) + [autoprefixer](https://github.com/postcss/autoprefixer).
 * [ESLint](http://eslint.org/) + AirBnb's [JavaScript style guide](https://github.com/airbnb/javascript).
 * [UglifyJS](https://github.com/mishoo/UglifyJS)
 * [Imagemin](https://github.com/imagemin/imagemin)
@@ -71,6 +71,10 @@ $npm version patch
 ## Theme Hooks
 
 Corona has 100% support for the [Theme Hook Alliance's](https://github.com/zamoose/themehookalliance) suite of action hooks. We've also added a few other actions and filters, documented below.
+
+### Visual Action Hook Guide
+
+The <a href="{{ site.github.url }}/hooks/">Visual Action Hook Guide</a> outlines some of Corona's layout-related action hooks. These hooks provide easy access to key area's of the theme for plugin and child-theme development.
 
 ### Corona Action Hooks
 
@@ -210,11 +214,15 @@ Corona has 100% support for the [Theme Hook Alliance's](https://github.com/zamoo
 </section>
 
 <section>
-## Templates
+## Templates and Markup
+
+### Visual Markup Guide
 
 Generally speaking, The <a href="{{ site.github.url }}/markup/">Visual Markup Guide</a> explains how Corona's markup is structured.
 
 The markup was heavily influenced by the [Genesis Framework](http://my.studiopress.com/themes/genesis/). The guide is forked from [Nathan Rice](http://www.nathanrice.net/)'s invaluable [Genesis Visual Markup Guide](http://www.genesisframework.com/markup.php). It has been updated to reflect Corona's structure.
+
+### Page Templates
 
 `page_full.php`
 : A full-width page template that doesn't include the primary and secondary sidebars.

@@ -1,0 +1,142 @@
+---
+layout: full-width
+title: Corona Visual Action Hook Guide
+classes: visual-guide hooks
+---
+
+<nav>
+	<ul class="navigation">
+		<li><a href="{{ site.github.url }}">Back to Corona Documentation</a></li>
+	</ul>
+</nav>
+
+<h1>{{ page.title }}</h1>
+
+<p class="label"><code>&lt;?php tha_before_html(); ?&gt;</code></p>
+
+<div class="box head"><!--.head-->
+	<p class="label"><code>&lt;?php tha_head_top(); ?&gt;</code></p>
+	<h2>Head</h2>
+	<p class="label"><code>&lt;?php tha_head_bottom(); ?&gt;</code></p>
+</div><!--end .head-->
+
+
+<div class="box body"><!--.body -->
+	<p class="label"><code>&lt;?php tha_body_top(); ?&gt;</code></p>
+	<h2>Body</h2>
+
+	<p class="label"><code>&lt;?php tha_header_before(); ?&gt;</code></p>
+		<div class="box header"><!--.header-->
+			<p class="label"><code>&lt;?php tha_header_top(); ?&gt;</code></p>
+			<h2>Site Header</h2>
+			<p class="label"><code>&lt;?php tha_header_bottom(); ?&gt;</code></p>
+		</div><!--end .header-->
+	<p class="label"><code>&lt;?php tha_header_after(); ?&gt;</code></p>
+
+	<p class="label"><code>&lt;?php corona_menu_before(); ?&gt;</code></p>
+		<div class="box nav-primary"><!--.nav-primary-->
+			<p class="label"><code>&lt;?php corona_menu_top( 'primary' ); ?&gt;</code></p>
+			<h2>Primary Menu</h2>
+			<p class="label"><code>&lt;?php corona_menu_bottom( 'primary' ); ?&gt;</code></p>
+		</div><!--end .nav-primary-->
+
+	<div class="box nav-secondary"><!--.nav-secondary-->
+		<p class="label"><code>&lt;?php corona_menu_top( 'secondary' ); ?&gt;</code></p>
+		<h2>Secondary Menu</h2>
+		<p class="label"><code>&lt;?php corona_menu_bottom( 'secondary' ); ?&gt;</code></p>
+	</div><!--.nav-secondary-->
+
+	<p class="label"><code>&lt;?php corona_menu_after(); ?&gt;</code></p>
+
+	<div class="box content-sidebar-wrap"><!--.content-sidebar-wrap-->
+		<div class="tha_content"><!--.tha_content-->
+			<p class="label"><code>&lt;?php tha_content_before(); ?&gt;</code></p>
+			<div class="box content"><!--.content-->
+				<p class="label"><code>&lt;?php tha_content_top(); ?&gt;</code></p>
+				<h2>Content</h2>
+				<p class="label"><code>&lt;?php tha_content_while_before(); ?&gt;</code></p>
+				<div class="box while-loop"><!--.while-loop-->
+					<h2>While Loop <span>(when present)</span> </h2>
+					<p class="label"><code>&lt;?php tha_entry_before(); ?&gt;</code></p>
+					<div class="box entry"><!--.entry-->
+						<p class="label"><code>&lt;?php tha_entry_top(); ?&gt;</code></p>
+						<h2>Entry</h2>
+
+						<div class="box entry-header"><!--.entry-header-->
+							<h2>Entry Header</h2>
+							<div class="box entry-title"><!--.entry-title-->
+								<h2>Entry Title</h2>
+							</div><!--end .entry-title-->
+						</div><!--end .entry-header-->
+
+						<p class="label"><code>&lt;?php tha_entry_content_before(); ?&gt;</code></p>
+
+						<div class="box entry-content"><!--.entry-content-->
+							<h2>Entry Content</h2>
+							<div class="box entry-meta"><!--.entry-meta-->
+								<h2>Entry Meta</h2>
+							</div><!--end.entry-meta-->
+						</div><!--end .entry-content-->
+
+						<p class="label"><code>&lt;?php tha_entry_content_after(); ?&gt;</code></p>
+
+						<div class="box entry-footer"><!--.entry-footer-->
+							<h2>Entry Footer</h2>
+						</div><!--end .entry-footer-->
+
+						<p class="label"><code>&lt;?php tha_entry_bottom(); ?&gt;</code></p>
+					</div><!--end .entry-->
+
+					<p class="label"><code>&lt;?php tha_comments_before(); ?&gt;</code></p>
+
+					<div class="box entry-comments"><!--.entry-comments-->
+						<h2>Entry Comments</h2>
+						<div class="box entry-respond"><!--.entry-respond-->
+							<h2>Entry Respond</h2>
+						</div><!--end .entry-respond-->
+					</div><!--end .entry-comments-->
+					<p class="label"><code>&lt;?php tha_comments_after(); ?&gt;</code></p>
+
+					<p class="label"><code>&lt;?php tha_entry_after(); ?&gt;</code></p>
+				</div><!--end .while-loop-->
+				<p class="label"><code>&lt;?php tha_content_while_after(); ?&gt;</code></p>
+				<p class="label"><code>&lt;?php tha_content_bottom(); ?&gt;</code></p>
+			</div><!--end .content-->
+			<p class="label"><code>&lt;?php tha_content_after(); ?&gt;</code></p>
+		</div><!--end .tha_content-->
+
+		<div class="tha_primary_sidebar"><!--.tha_primary_sidebar-->
+			<p class="label"><code>&lt;?php tha_sidebars_before(); ?&gt;</code></p>
+			<div class="box sidebar sidebar-primary"><!--.sidebar-primary-->
+				<p class="label"><code>&lt;?php tha_sidebar_top(); ?&gt;</code></p>
+				<h2>Primary Sidebar</h2>
+				<div class="box widget"><!--.widget-->
+					<h2>Widget</h2>
+				</div><!--end .widget-->
+				<p class="label"><code>&lt;?php tha_sidebar_bottom(); ?&gt;</code></p>
+			</div><!--end .sidebar-primary-->
+		</div><!--.tha_primary_sidebar-->
+	</div><!--.content-sidebar-wrap-->
+
+
+	<div class="corona_sidebar_secondary"><!--.corona_sidebar_secondary-->
+		<div class="box sidebar sidebar-secondary"><!--.sidebar-secondary-->
+			<p class="label"><code>&lt;?php corona_sidebar_secondary_top(); ?&gt;</code></p>
+			<h2>Secondary Sidebar</h2>
+			<div class="box widget">
+				<h2>Widget</h2>
+			</div>
+			<p class="label"><code>&lt;?php corona_sidebar_secondary_bottom(); ?&gt;</code></p>
+		</div><!--end .sidebar-secondary-->
+		<p class="label tha_sidebars_after"><code>&lt;?php tha_sidebars_after(); ?&gt;</code></p>
+	</div><!--end .corona_sidebar_secondary-->
+
+	<p class="label"><code>&lt;?php tha_footer_before(); ?&gt;</code></p>
+	<div class="box site-footer">
+		<p class="label"><code>&lt;?php tha_footer_top(); ?&gt;</code></p>
+		<h2>Footer</h2>
+		<p class="label"><code>&lt;?php tha_footer_bottom(); ?&gt;</code></p>
+	</div>
+	<p class="label"><code>&lt;?php tha_footer_after(); ?&gt;</code></p>
+	<p class="label"><code>&lt;?php tha_body_bottom(); ?&gt;</code></p>
+</div><!-- end .body -->

@@ -1,4 +1,4 @@
-.visual-markup-guide {
+.visual-guide {
 	.navigation {
 		margin: 0;
 		padding: 0;
@@ -56,7 +56,6 @@
 	}
 
 	.content-sidebar-wrap {
-
 		@include bp($laptop) {
 			float: left;
 			width: 72%;
@@ -88,6 +87,46 @@
 		@include bp($laptop) {
 			overflow: hidden;
 			width: 100%;
+		}
+	}
+}
+
+.visual-guide.hooks {
+	h2 {
+		font-size: 16px;
+		margin: 1em 0;
+	}
+
+	h2 span {
+		font-weight: normal;
+	}
+
+	.content {
+		width: 100%;
+	}
+
+	.tha_content {
+		@include bp($laptop) {
+			float: left;
+			width: 62%;
+		}
+	}
+
+	.sidebar-primary {
+		width: 100%;
+	}
+
+	.tha_primary_sidebar {
+		@include bp($laptop) {
+			float: right;
+			width: 33%;
+		}
+	}
+
+	.tha_sidebars_after {
+		@include bp($laptop) {
+			float: right;
+			width: 24%;
 		}
 	}
 }

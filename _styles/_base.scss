@@ -138,8 +138,25 @@ dd {
   }
 }
 
+.primary-nav {
+  padding-bottom: 2em;
+
+  ul {
+    margin: 0;
+    padding: 0 0 0 1.5em;
+  }
+
+  @include bp($laptop) {
+    -webkit-font-smoothing:subpixel-antialiased;
+    float: left;
+    position: fixed;
+    top: em(325);
+    width: em(270);
+  }
+}
+
 header {
-  padding-bottom: em(50);
+  padding-bottom: 2em;
 
   @include bp($laptop) {
     -webkit-font-smoothing:subpixel-antialiased;
@@ -160,11 +177,8 @@ section {
 
 footer {
   @include bp($laptop) {
-    -webkit-font-smoothing:subpixel-antialiased;
-    bottom: em(50);
-    float: left;
-    position: fixed;
-    width: em(270);
+    float: right;
+    width: 31.25em;
   }
 }
 
@@ -224,10 +238,3 @@ header strong {
   font-size: em(14, 11);
   line-height: 1.5em;
 }
-
-
-
-
-/*------------------------------------*\
-  #DEFINITION-LISTS
-\*------------------------------------*/

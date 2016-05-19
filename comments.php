@@ -20,6 +20,8 @@ if ( post_password_required() ) {
 }
 ?>
 
+<?php tha_comments_before(); ?>
+
 <div id="comments" class="entry-comments">
 	<?php
 	// You can start editing here -- including this comment!
@@ -82,3 +84,5 @@ if ( post_password_required() ) {
 	?>
 
 </div><!-- #comments -->
+
+<?php tha_comments_after(); ?>

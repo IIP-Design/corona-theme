@@ -109,7 +109,7 @@ add_filter( 'excerpt_more', 'corona_excerpt_read_more' );
 	* @since Corona 2.1
 	*/
 
-function corona_responsive_oembed_videos( $html, $url, $attr ) {
+function corona_responsive_oembed_videos( $html, $url, $attr, $post_ID ) {
 	$providers = array(
 		"youtube.com/",
 		"vimeo.com/",
@@ -133,4 +133,4 @@ function corona_responsive_oembed_videos( $html, $url, $attr ) {
 	return $html;
 }
 
-add_filter( 'embed_oembed_html', 'corona_responsive_oembed_videos' );
+add_action( 'embed_oembed_html', 'corona_responsive_oembed_videos', 10, 4 );

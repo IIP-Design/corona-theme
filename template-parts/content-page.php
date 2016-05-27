@@ -14,9 +14,11 @@
 
 	<?php tha_entry_top(); ?>
 
+	<?php if ( ! is_front_page() ) : ?>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
+	<?php endif; ?>
 
 	<?php tha_entry_content_before(); ?>
 

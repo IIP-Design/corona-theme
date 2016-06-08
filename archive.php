@@ -26,28 +26,23 @@ get_header(); ?>
 			</header><!-- .page-header -->
 
 			<?php
-			tha_content_while_before();
 
-			while ( have_posts() ) : the_post();
+				tha_content_while_before();
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search_archive' );
+				corona_loop( 'template-parts/content', 'search_archive' );
 
-			endwhile;
+				tha_content_while_after();
 
-			tha_content_while_after();
+				tha_content_bottom();
 
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
+			tha_content_bottom();
+
 		endif; ?>
 
-		<?php tha_content_bottom(); ?>
 		</main><!-- #main -->
 		<?php tha_content_after(); ?>
 

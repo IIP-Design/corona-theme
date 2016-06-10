@@ -147,13 +147,12 @@ function corona_menu_bottom( $menu ) {
   */
 
 function corona_loop( $slug, $name, $comments = false ) {
-  $templates = corona_get_template_part( $slug, $name );
 
 	while ( have_posts() ) : the_post();
 
-    $post_format = get_post_format();
-    
-    corona_template_loader( $templates, $post_format );
+    $post_type = get_post_format();
+
+    corona_template_loader( $slug, $name, $post_type );
 
     if ( $comments === true ) {
       if ( comments_open() || get_comments_number() ) :

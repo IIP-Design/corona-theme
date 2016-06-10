@@ -33,7 +33,7 @@ get_header(); ?>
 
 			tha_content_while_before();
 
-			corona_loop( 'template-parts/content', get_post_format() );
+			corona_loop( 'template-parts/content', 'search_archive' );
 
 			tha_content_while_after();
 

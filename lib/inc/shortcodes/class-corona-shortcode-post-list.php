@@ -86,8 +86,19 @@ class Corona_Shortcode_Post_List {
 
 		$html .= $before;
 
+		// @todo: this needs to be made more flexible/configurable
 		$query_args = array(
-			'post_type'           => 'post',
+			'post_type' => 'post',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'post_format',
+					'field' => 'slug',
+					'terms' => array(
+						'post-format-link'
+					),
+					'operator' => 'NOT IN'
+				)
+			),
 			'category_name'       => $posts_cat,
 			'showposts'           => $posts_num
 		);

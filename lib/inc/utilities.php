@@ -119,7 +119,10 @@ function corona_load_template( $templates ) {
 	* @since 2.5.0
 	*/
 
-function corona_template_loader( $templates, $post_type ) {
+function corona_template_loader( $slug, $name, $post_type ) {
+
+  $templates = corona_get_template_part( $slug, $name );
+
   if ( has_filter( 'corona_loop_template' ) ) {
     $templates = apply_filters( 'corona_loop_template', $templates, $post_type );
 	}

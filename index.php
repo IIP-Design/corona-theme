@@ -33,17 +33,8 @@ get_header(); ?>
 
 			tha_content_while_before();
 
-			while ( have_posts() ) : the_post();
+			corona_loop( 'template-parts/content', 'search_archive' );
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;
-			
 			tha_content_while_after();
 
 		else :

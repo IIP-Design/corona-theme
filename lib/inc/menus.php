@@ -11,7 +11,7 @@
 
 
 /**
-  * Corona Menus
+  * Corona's primary and secondary menus
   *
   * @package WordPress
   * @subpackage corona

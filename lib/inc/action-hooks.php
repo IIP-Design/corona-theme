@@ -27,6 +27,13 @@ function corona_posted_on() {
 
 
 
+function corona_entry_footer() {
+  do_action( 'corona_entry_footer' );
+}
+
+
+
+
 /**
   * Insert Menu
   *
@@ -137,7 +144,7 @@ function corona_menu_bottom( $menu ) {
 
 
 /**
-  * The Wordpress loop as an action hook for DRY-er templates and easier replacement
+  * The WP loop action hook for DRY-er templates and easier loop customization
   *
   * @param string $slug - The slug name for the generic template.
   * @param string $name - The name of the specialized template.
@@ -147,20 +154,5 @@ function corona_menu_bottom( $menu ) {
   */
 
 function corona_loop( $slug, $name, $comments = false ) {
-
-	while ( have_posts() ) : the_post();
-
-    $post_type = get_post_format();
-
-    corona_template_loader( $slug, $name, $post_type );
-
-    if ( $comments === true ) {
-      if ( comments_open() || get_comments_number() ) :
-        comments_template();
-      endif;
-    }
-
-	endwhile;
-
-  do_action( 'corona_loop' );
+  do_action( 'corona_loop', $slug, $name, $comments = false );
 }

@@ -15,29 +15,32 @@
 
 	<?php tha_entry_top(); ?>
 
+
 	<?php the_post_thumbnail( 'medium_large' ); ?>
 
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+	<div class="entry">
+		<header class="entry-header">
+			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php corona_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+			<?php if ( 'post' === get_post_type() ) : ?>
+			<div class="entry-meta">
+				<?php corona_posted_on(); ?>
+			</div><!-- .entry-meta -->
+			<?php endif; ?>
+		</header><!-- .entry-header -->
 
-	<?php tha_entry_content_before(); ?>
+		<?php tha_entry_content_before(); ?>
 
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+		<div class="entry-summary">
+			<?php the_excerpt(); ?>
+		</div><!-- .entry-summary -->
 
-	<?php tha_entry_content_after(); ?>
+		<?php tha_entry_content_after(); ?>
 
-	<footer class="entry-footer">
-		<?php corona_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+		<footer class="entry-footer">
+			<?php corona_entry_footer(); ?>
+		</footer><!-- .entry-footer -->
+	</div>
 
 	<?php tha_entry_bottom(); ?>
 

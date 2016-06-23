@@ -35,6 +35,9 @@ get_header(); ?>
 
 				tha_content_bottom();
 
+				previous_posts_link();
+				next_posts_link();
+
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );

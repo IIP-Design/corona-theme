@@ -14,6 +14,7 @@ get_header(); ?>
 		<?php tha_content_before(); ?>
 		<main id="main" class="content" role="main"><!-- post loop -->
 		<?php tha_content_top(); ?>
+		<?php dynamic_sidebar( 'before-entry' ); ?>
 
 			<?php
 			tha_content_while_before();
@@ -23,6 +24,7 @@ get_header(); ?>
 			tha_content_while_after();
 			?>
 
+		<?php dynamic_sidebar( 'after-entry' ); ?>
 		<?php tha_content_bottom(); ?>
 		</main><!-- #main -->
 		<?php tha_content_after(); ?>

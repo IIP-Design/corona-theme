@@ -24,8 +24,8 @@ get_header(); ?>
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				<header class="page-header">
+					<h1 class="entry-title"><?php echo get_the_title( get_option( 'page_for_posts' ) ); ?></h1>
 				</header>
 
 			<?php

@@ -8,8 +8,6 @@ defined( 'ABSPATH' ) || exit;
 
 class Corona_Shortcode_Post_List {
 
-	const VERSION = '0.0.0';
-
 	private static $_instance = null;
 
 	public $file; // may not need
@@ -35,11 +33,7 @@ class Corona_Shortcode_Post_List {
 	public function __construct( $file ) {
 		$this->file = $file;
 
-		add_action( 'wp_enqueue_scripts', array( $this , 'corona_enqueue_scripts' ) );
 		add_shortcode( 'post-list', array($this, 'corona_shortcode_post_list') );
-	}
-
-	public function corona_enqueue_scripts () {
 	}
 
 	public function corona_shortcode_post_list( $atts ) {
@@ -47,10 +41,11 @@ class Corona_Shortcode_Post_List {
 		$defaults = array(
 			'title'  					=> '',
 			'posts_cat' 				=> '',
-			'posts_num' 				=> 0,
+			'posts_num' 				=> 1,
 			'show_image'				=> 0,
 			'image_size'           		=> '',
 			'image_alignment' 			=> 'center',
+			'post_format'				=> '',
 			'show_title' 				=> 0,
 			'show_byline'          		=> 0,
 			'post_info' 				=> '[post_date]',
@@ -58,8 +53,6 @@ class Corona_Shortcode_Post_List {
 			'content_limit' 			=> 20,
 			'more_text_from_post'      	=> 0,
 			'more_text' 		   		=> __( 'Read More...', 'corona' ),
-			'more_from_category'      	=> 0,
-			'more_from_category_text' 	=> __( 'More Posts from this Category', 'corona' ),
 			'after'  					=> '',
 			'before' 					=> '',
 			'label'  					=> ''
@@ -67,16 +60,57 @@ class Corona_Shortcode_Post_List {
 
 		$merged_atts = shortcode_atts( $defaults, $atts );
 
-		// echo '<pre>';
-		// var_dump($merged_atts);
-		// echo '</pre>';
-		// die();
-
 		$output = $this->render( $merged_atts );
 
 		return apply_filters( 'corona_shortcode_post_list', $output, $atts );
 	}
 
+
+	/**
+	 * Returns the taxonomy query
+	 * Since there is not a formal 'standard' post format, we need to toggle the operator
+	 * If the selected post format is 'standard', return an array of all other formats and use 'NOT IN' to exclude
+	 * If post format is something other than 'standard', retrun array of selected formats and use the 'IN' operator to exclude the standard post format
+	 * @todo  Handle multiple selected post formats
+	 * 
+	 * @param  string $post_format Selected post format
+	 * @return array               Tax query array
+	 */
+	private function get_tax_query ( $post_format ) {
+ 		$formats = get_theme_support( 'post-formats' );
+ 		$tax_args = array();
+ 		$operator = $this->get_tax_operator( $post_format );
+
+		 foreach ( $formats[0] as $format ) {
+			if( $operator == 'NOT IN') {
+				if( $format != $post_format  ) {
+					$tax_args[] = 'post-format-' . $format;
+				}
+			} else {
+				if( $format == $post_format  ) {
+					$tax_args[] = 'post-format-' . $format;
+				}
+			}
+		}
+
+ 		return $tax_args;
+	}
+
+	/**
+	 * Return the taxonomy operator based on selected post format 
+	 * @param  string $post_format Selected post format
+	 * @return string              Taxonomy query operator
+	 */
+	private function get_tax_operator ( $post_format ) {
+		return ( $post_format == 'standard' ) ?  'NOT IN' : 'IN';
+	}
+
+	/**
+	 * Render the shortcode to the page
+	 * 
+	 * @param  array $atts 	shortcode configuration attributes
+	 * @return string $html html to render   
+	 */
 	private function render( $atts ) {
 		global $wp_query;
 
@@ -91,17 +125,16 @@ class Corona_Shortcode_Post_List {
 			'post_type' => 'post',
 			'tax_query' => array(
 				array(
-					'taxonomy' => 'post_format',
-					'field' => 'slug',
-					'terms' => array(
-						'post-format-link'
-					),
-					'operator' => 'NOT IN'
+					'taxonomy' 	=> 'post_format',
+					'field' 	=> 'slug',
+					'terms' 	=> $this->get_tax_query( $post_format ),
+					'operator' 	=> $this->get_tax_operator( $post_format )
 				)
 			),
-			'category_name'       => $posts_cat,
-			'showposts'           => $posts_num
+			'cat'       		=> $posts_cat,
+			'showposts'         => $posts_num
 		);
+
 
 		$wp_query = new WP_Query( $query_args );
 
@@ -112,7 +145,7 @@ class Corona_Shortcode_Post_List {
 			if ( $show_image ) {
 				if ( has_post_thumbnail() ) {
 					$role = empty( $show_title) ? '' : 'aria-hidden="true"';
-					$image = get_the_post_thumbnail( $post, 'medium_large' );
+					$image = get_the_post_thumbnail( $post, $image_size );
 				    $html .= '<a class="post-image-anchor" href="' .  get_permalink() . '" class="' . esc_attr( $image_alignment ) . '" ' . $role . '"">'. $image . '</a>';
 				}
 			}
@@ -175,7 +208,11 @@ class Corona_Shortcode_Post_List {
 } // end Corona_Shortcode_Post_List class
 
 
-// Initialize and register shortcode
+/**
+ * Inititalize the shortcode 
+ * 
+ * @return Corona_Shortcode_Post_List class instance
+ */
 function corona_shortcode_post_list () {
 	$instance = Corona_Shortcode_Post_List::instance( __FILE__ );
 	return $instance;

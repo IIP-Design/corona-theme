@@ -1,7 +1,9 @@
 <?php
-/**************************************************************************
-
-**************************************************************************/
+/**
+ * Displays lists of posts to frontend based on tinymce form input
+ *
+ * @package corona
+ */
 
 //* Prevent loading this file directly
 defined( 'ABSPATH' ) || exit;

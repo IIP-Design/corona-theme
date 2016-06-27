@@ -156,3 +156,20 @@ function corona_get_relative_url($url) {
 	$parsed = parse_url( $url );
 	return $parsed['path'];
 }
+
+
+/**
+	* Display formatted message
+	*
+	* @return relative url
+	* @since Corona 2.0
+	*/
+
+function corona_debug ( $obj, $kill = false  ) {
+	echo '<pre>';
+	var_dump( $obj );
+	echo '</pre>';
+	
+	if( $kill ) die();
+}
+

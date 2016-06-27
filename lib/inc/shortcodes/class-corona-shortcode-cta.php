@@ -8,8 +8,6 @@ defined( 'ABSPATH' ) || exit;
 
 class Corona_Shortcode_CTA {
 
-	const VERSION = '0.0.0';
-
 	private static $_instance = null;
 
 	public $file; // may not need
@@ -57,11 +55,6 @@ class Corona_Shortcode_CTA {
 
 		$merged_atts = shortcode_atts( $defaults, $atts );
 
-		// echo '<pre>';
-		// var_dump($merged_atts);
-		// echo '</pre>';
-		// die();
-
 		$output = $this->render( $merged_atts );
 
 		return apply_filters( 'corona_shortcode_cta', $output, $atts );
@@ -104,26 +97,3 @@ function corona_shortcode_cta () {
 }
 
 corona_shortcode_cta();
-
-// <div class="cta-container">
-// 	<img class="cta-image" src="https://ylai.edit.america.gov/wp-content/uploads/sites/2/2016/04/banner2-1.jpg" alt="President Obama shaking hands with honorees" />
-// 	<div class="cta-gradient"></div>
-// 	<div class="cta-text">
-
-// 	Develop as a leader, connect with peers across the region, and be the change you're looking for
-
-// 	<a class="button cta-button" href="https://ylai.edit.america.gov/fellowship/">apply now</a>
-
-// 	</div>
-// </div>
-
-// <div class="cta-container">
-//   <img class="cta-image" src="//localhost:3000/wp-content/uploads/2016/04/banner2.jpg" alt="President Obama shaking hands with honorees" />
-//   <div class="cta-gradient"></div>
-//   <div class="cta-text">
-//     <p>Develop as a leader, connect with peers across the region, and be the change you're looking for</p>
-//     <p><a class="button cta-button" href="/the-fellowship/">apply now</a></p>
-//   </div>
-// </div>
-
-

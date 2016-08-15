@@ -23,14 +23,21 @@
 	<?php tha_entry_content_before(); ?>
 
 	<div class="entry-content">
-		<?php
-			if ( has_post_thumbnail() ) {
-				$role = empty( $instance['show_title'] ) ? '' : 'aria-hidden="true"';
-				$image = get_the_post_thumbnail( 'medium_large' );
-				echo ( $image );
-			}
-		?>
+    <?php
+      if ( has_post_thumbnail() ) {
+        $html = '<figure>';
+          $role = empty( $instance['show_title'] ) ? '' : 'aria-hidden="true"';
+          $image = get_the_post_thumbnail( $post, 'medium_large' );
+          $html .= $image;
 
+          $html .= '<figcaption>';
+            $html .= get_post( get_post_thumbnail_id() ) -> post_excerpt;
+          $html .= '</figcaption>';
+        $html .= '</figure>';
+
+        echo $html;
+      }
+    ?>
 		<?php
 			the_content();
 

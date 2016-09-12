@@ -22,7 +22,6 @@
 }
 
 .nav-primary li {
-
 	@include bp($laptop) {
 		float: left;
 		position: relative;
@@ -35,12 +34,17 @@
 }
 
 .nav-primary ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 1.5em;
-	left: -999em;
-	z-index: 99999;
+  margin-left: 1em;
+
+  @include bp($laptop) {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    float: left;
+    left: -999em;
+    margin-left: 0;
+    position: absolute;
+    top: 1.5em;
+    z-index: 99999;
+  }
 }
 
 .nav-primary ul ul ul {
@@ -143,7 +147,7 @@
 
 .nav-primary ul {
 	@include bp($laptop) {
-		display: block;
+		display: inline-block;
 	}
 }
 

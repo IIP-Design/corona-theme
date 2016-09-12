@@ -13,43 +13,61 @@
 .two-fourths,
 .two-sixths,
 .two-thirds {
-	float: left;
-	margin-left: 2.564102564102564%;
+  @include bp($tablet) {
+    float: left;
+    margin-left: 2.564102564102564%;
+  }
 }
 
 .one-half,
 .three-sixths,
 .two-fourths {
-	width: 48.717948717948715%;
+  @include bp($tablet) {
+	  width: 48.717948717948715%;
+  }
 }
 
 .one-third,
 .two-sixths {
-	width: 31.623931623931625%;
+  @include bp($tablet) {
+	  width: 31.623931623931625%;
+  }
 }
 
 .four-sixths,
 .two-thirds {
-	width: 65.81196581196582%;
+  @include bp($tablet) {
+	  width: 65.81196581196582%;
+  }
 }
 
 .one-fourth {
-	width: 23.076923076923077%;
+  @include bp($tablet) {
+	  width: 23.076923076923077%;
+  }
 }
 
 .three-fourths {
-	width: 74.35897435897436%;
+  @include bp($tablet) {
+	  width: 74.35897435897436%;
+  }
 }
 
 .one-sixth {
-	width: 14.52991452991453%;
+  @include bp($tablet) {
+	  width: 14.52991452991453%;
+  }
 }
 
 .five-sixths {
-	width: 82.90598290598291%;
+  @include bp($tablet) {
+	  width: 82.90598290598291%;
+  }
 }
 
 .first {
-	clear: both;
-	margin-left: 0;
+  @include bp($tablet) {
+    clear: both;
+    margin-left: 0;
+  }
 }

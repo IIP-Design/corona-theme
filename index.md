@@ -222,6 +222,10 @@ Generally speaking, The <a href="{{ site.github.url }}/markup/">Visual Markup Gu
 
 The markup was heavily influenced by the [Genesis Framework](http://my.studiopress.com/themes/genesis/). The guide is forked from [Nathan Rice](http://www.nathanrice.net/)'s invaluable [Genesis Visual Markup Guide](http://www.genesisframework.com/markup.php). It has been updated to reflect Corona's structure.
 
+### Responsive Columns
+
+Corona has markup that allows for easily adding columns to pages and posts that work across different viewports. Here are <a href="{{ site.github.url }}/responsive-columns/">some examples</a>.
+
 ### Page Templates
 
 `page_full.php`

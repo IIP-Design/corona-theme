@@ -46,10 +46,11 @@ function corona_get_template_part( $slug, $name ) {
 	*
 	* @param array $templates - An array of absolute template paths
 	*
-	* @see https://developer.wordpress.org/reference/functions/locate_template/
-	*
 	* @return array $templates - An unmutated copy of the passed $template array
-	*
+  *
+	* @see https://developer.wordpress.org/reference/functions/locate_template/
+  * @see https://codex.wordpress.org/Function_Reference/load_template
+  *
 	* @since 2.5.0
 	*/
 
@@ -73,19 +74,18 @@ function corona_load_template( $templates ) {
 /**
 	* A flexible template loader.
 	*
-	* @param array $templates - A list of templates to load
-	* @param string $post_type - Useful if you want to do something, like load a
-	*                            template, coniditonally for a post_type
-	*
+	* @param string $slug - The slug name for the generic template.
+	* @param string $name - The name of the specialized template.
+  *
 	* @since 2.5.0
 	*/
 
-function corona_template_loader( $slug, $name, $post_type ) {
+function corona_template_loader( $slug, $name ) {
 
   $templates = corona_get_template_part( $slug, $name );
 
   if ( has_filter( 'corona_loop_template' ) ) {
-    $templates = apply_filters( 'corona_loop_template', $templates, $post_type );
+    $templates = apply_filters( 'corona_loop_template', $templates );
 	}
 
 	corona_load_template( $templates );

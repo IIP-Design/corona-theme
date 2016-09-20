@@ -34,14 +34,9 @@ function corona_get_header_image_tag($html, $header, $attr) {
 	$height = absint( $header->height );
 
 	// Set src to relative path since domain mapper doesn't work here
-	$attr = array(
-		'src' => $path,
-	);
-
 	$attr = wp_parse_args(
-		$attr,
 		array(
-			'src' => $header->src,
+		  'src' => $path,
 			'width' => $width,
 			'height' => $height,
 			'alt' => get_bloginfo( 'name' ),

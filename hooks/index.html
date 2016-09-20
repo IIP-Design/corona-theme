@@ -54,6 +54,12 @@ classes: visual-guide hooks
 			<div class="box content"><!--.content-->
 				<p class="label"><code>&lt;?php tha_content_top(); ?&gt;</code></p>
 				<h2>Content</h2>
+        <div class="box before-entry"><!--.before-entry-->
+          <h2>Before Entry</h2>
+          <div class="box widget"><!--.widget-->
+            <h2>Widget</h2>
+          </div><!--end .widget-->
+        </div><!-- end .before-entry-->
 				<p class="label"><code>&lt;?php tha_content_while_before(); ?&gt;</code></p>
 				<div class="box while-loop"><!--.while-loop-->
 					<h2>While Loop <span>(when present)</span> </h2>
@@ -100,6 +106,12 @@ classes: visual-guide hooks
 					<p class="label"><code>&lt;?php tha_entry_after(); ?&gt;</code></p>
 				</div><!--end .while-loop-->
 				<p class="label"><code>&lt;?php tha_content_while_after(); ?&gt;</code></p>
+        <div class="box after-entry"><!--.after-entry-->
+          <h2>After Entry</h2>
+          <div class="box widget"><!--.widget-->
+            <h2>Widget</h2>
+          </div><!--end .widget-->
+        </div><!-- end .after-entry-->
 				<p class="label"><code>&lt;?php tha_content_bottom(); ?&gt;</code></p>
 			</div><!--end .content-->
 			<p class="label"><code>&lt;?php tha_content_after(); ?&gt;</code></p>
@@ -135,6 +147,18 @@ classes: visual-guide hooks
 	<div class="box site-footer">
 		<p class="label"><code>&lt;?php tha_footer_top(); ?&gt;</code></p>
 		<h2>Footer</h2>
+    <div class="box footer-1"><!--.footer-1-->
+      <h2>Footer 1</h2>
+      <div class="box widget"><!--.widget-->
+        <h2>Widget</h2>
+      </div><!--end .widget-->
+    </div><!-- end .footer-1-->
+    <div class="box footer-2"><!--.footer-2-->
+      <h2>Footer 2</h2>
+      <div class="box widget"><!--.widget-->
+        <h2>Widget</h2>
+      </div><!--end .widget-->
+    </div><!-- end .footer-2-->
 		<p class="label"><code>&lt;?php tha_footer_bottom(); ?&gt;</code></p>
 	</div>
 	<p class="label"><code>&lt;?php tha_footer_after(); ?&gt;</code></p>

@@ -14,9 +14,7 @@
 function corona_post_loop( $slug, $name, $comments = false ) {
 	while ( have_posts() ) : the_post();
 
-    $post_type = get_post_format();
-
-    corona_template_loader( $slug, $name, $post_type );
+    corona_template_loader( $slug, $name );
 
     if ( $comments === true ) {
       if ( comments_open() || get_comments_number() ) :

@@ -154,5 +154,5 @@ function corona_menu_bottom( $menu ) {
   */
 
 function corona_loop( $slug, $name, $comments = false ) {
-  do_action( 'corona_loop', $slug, $name, $comments = false );
+  do_action( 'corona_loop', $slug, $name, $comments );
 }

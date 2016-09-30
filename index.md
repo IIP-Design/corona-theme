@@ -13,7 +13,7 @@ Corona doesn't really provide much in terms of visual styling; it primarily prov
 
 ### Build Tools
 
-Corona uses NPM scripts to run its build process. Checkout the [`package.json`](https://github.com/IIP-Design/corona/blob/master/package.json) file to see what's included and version numbers. Here are the highlights:
+Corona uses NPM scripts to run its build process. Checkout the [`package.json`](https://github.com/IIP-Design/corona-theme/blob/master/package.json) file to see what's included and version numbers. Here are the highlights:
 
 * [SASS](http://sass-lang.com/)
 * [PostCSS](https://github.com/postcss/postcss) + [autoprefixer](https://github.com/postcss/autoprefixer).
@@ -80,7 +80,7 @@ The <a href="{{ site.github.url }}/hooks/">Visual Action Hook Guide</a> outlines
 
 `corona_pre_init`
 : Do something before Corona initializes
-: [View in source](https://github.com/IIP-Design/corona/blob/0d7d8f883943929bb3f14453b141f17396ec1c87/lib/init.php#L16)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/0d7d8f883943929bb3f14453b141f17396ec1c87/lib/init.php#L16)
 
 `corona_init`
 : Do something at initialization
@@ -95,7 +95,7 @@ The <a href="{{ site.github.url }}/hooks/">Visual Action Hook Guide</a> outlines
       );
     }
 ```
-: [View in source](https://github.com/IIP-Design/corona/blob/0d7d8f883943929bb3f14453b141f17396ec1c87/lib/init.php#L168)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/0d7d8f883943929bb3f14453b141f17396ec1c87/lib/init.php#L168)
 
 `corona_loop`
 : The WP loop action hook for DRY-er templates and easier loop customization
@@ -130,7 +130,7 @@ The <a href="{{ site.github.url }}/hooks/">Visual Action Hook Guide</a> outlines
 
     add_action( 'corona_loop', 'me_custom_loop', 10, 3 );
 ```
-: [View in source](https://github.com/IIP-Design/corona/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L157)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L157)
 
 `corona_get_menu`
 : Insert a specified menu into a template.
@@ -157,23 +157,23 @@ The <a href="{{ site.github.url }}/hooks/">Visual Action Hook Guide</a> outlines
 
     <?php corona_get_menu( 'third' ); ?>
 ```
-: [View in source](https://github.com/IIP-Design/corona/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L45)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L45)
 
 `corona_sidebar_secondary_top`
 : Do something just after the opening `<aside>` of Corona's secondary sidebar
-: [View in source](https://github.com/IIP-Design/corona/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L61)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L61)
 
 `corona_sidebar_secondary_bottom`
 : Do something just before the closing `</aside>` of Corona's secondary sidebar
-: [View in source](https://github.com/IIP-Design/corona/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L76)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L76)
 
 `corona_menu_before`
 : Do something before Corona's primary and secondary menus
-: [View in source](https://github.com/IIP-Design/corona/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L91)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L91)
 
 `corona_menu_after`
 : Do something after Corona's primary and secondary menus
-: [View in source](https://github.com/IIP-Design/corona/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L106)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L106)
 
 `corona_menu_top`
 : Do something just after the opening `<nav>` of the specified menu
@@ -186,7 +186,7 @@ The <a href="{{ site.github.url }}/hooks/">Visual Action Hook Guide</a> outlines
 
     add_action( 'corona_menu_top', 'me_primary_menu_top_test', 10, 1 );
 ```
-: [View in source](https://github.com/IIP-Design/corona/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L122)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L122)
 
 `corona_menu_bottom`
 : Do something just before the closing `</nav>` of the specified menu
@@ -199,11 +199,11 @@ The <a href="{{ site.github.url }}/hooks/">Visual Action Hook Guide</a> outlines
 
     add_action( 'corona_menu_bottom', 'me_secondary_menu_bottom_test', 10, 1 );
 ```
-: [View in source](https://github.com/IIP-Design/corona/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L139)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L139)
 
 `corona_posted_on`
 : Change or remove 'Posted on \{\{date\}\} by \{\{author\}\}' output.
-: [View in source](https://github.com/IIP-Design/corona/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L24)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/44a41355ad0e02ba81e090564c4281ec311310ee/lib/inc/action-hooks.php#L24)
 
 
 ### Corona Filter Hooks
@@ -225,7 +225,7 @@ The <a href="{{ site.github.url }}/hooks/">Visual Action Hook Guide</a> outlines
 
   add_filter( 'corona_add_constants', 'me_add_constant' );
 ```
-: [View in source](https://github.com/IIP-Design/corona/blob/0d7d8f883943929bb3f14453b141f17396ec1c87/lib/init.php#L32)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/0d7d8f883943929bb3f14453b141f17396ec1c87/lib/init.php#L32)
 
 `corona_loop_template`
 : Allows you to hook into Corona's custom template loader, `corona_template_loader`. Useful for loading templates from custom locations, like from a plugin
@@ -243,27 +243,27 @@ The <a href="{{ site.github.url }}/hooks/">Visual Action Hook Guide</a> outlines
 
   add_filter( 'corona_loop_template', 'me_add_custom_template_location' );
 ```
-: [View in source](https://github.com/IIP-Design/corona/blob/0d7d8f883943929bb3f14453b141f17396ec1c87/lib/inc/utilities.php#L88)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/0d7d8f883943929bb3f14453b141f17396ec1c87/lib/inc/utilities.php#L88)
 
 `corona_content_width`
 : Augment the maximum allowed width for any content in the theme. Default is `640px`
-: [View in source](https://github.com/IIP-Design/corona/blob/0d7d8f883943929bb3f14453b141f17396ec1c87/lib/init.php#L157)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/0d7d8f883943929bb3f14453b141f17396ec1c87/lib/init.php#L157)
 
 `corona_custom_background_args`
 : Augment the background defaults for Wordpress's Customizer
-: [View in source](https://github.com/IIP-Design/corona/blob/0d7d8f883943929bb3f14453b141f17396ec1c87/lib/init.php#L85)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/0d7d8f883943929bb3f14453b141f17396ec1c87/lib/init.php#L85)
 
 `corona_shortcode_cta`
 : @todo
-: [View in source](https://github.com/IIP-Design/corona/blob/0d7d8f883943929bb3f14453b141f17396ec1c87/lib/inc/shortcodes/class-corona-shortcode-cta.php#L60)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/0d7d8f883943929bb3f14453b141f17396ec1c87/lib/inc/shortcodes/class-corona-shortcode-cta.php#L60)
 
 `corona_shortcode_post_list`
 : @todo
-: [View in source](https://github.com/IIP-Design/corona/blob/0d7d8f883943929bb3f14453b141f17396ec1c87/lib/inc/shortcodes/class-corona-shortcode-post-list.php#L67)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/0d7d8f883943929bb3f14453b141f17396ec1c87/lib/inc/shortcodes/class-corona-shortcode-post-list.php#L67)
 
 `corona_post_date_shortcode`
 : @todo
-: [View in source](https://github.com/IIP-Design/corona/blob/8760b3a286a903c347376bd0481b657a2e222948/lib/inc/shortcodes/class-corona-shortcode-post.php#L19)
+: [View in source](https://github.com/IIP-Design/corona-theme/blob/8760b3a286a903c347376bd0481b657a2e222948/lib/inc/shortcodes/class-corona-shortcode-post.php#L19)
 
 `corona_shortcode_button`
 : @todo

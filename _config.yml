@@ -1,5 +1,5 @@
 exclude: [vendor, node_modules, Gemfile, Gemfile.lock, styles.scss, js/src, package.json]
-repository: IIP-Design/corona
+repository: IIP-Design/corona-theme
 kramdown:
  input: GFM
  hard_wrap: false

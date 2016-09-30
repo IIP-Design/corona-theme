@@ -1,4 +1,4 @@
-# Corona
+# Corona Theme
 
 ## Build tools
 
@@ -28,4 +28,4 @@ If you need to compile Modernizr for *development only*, you can just run `npm r
 
 ## Documentation
 
-See the complete [`documentation`](http://iip-design.github.io/corona/).
+See the complete [`documentation`](http://iip-design.github.io/corona-theme/).

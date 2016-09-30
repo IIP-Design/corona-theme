@@ -24,14 +24,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IIP-Design/corona.git"
+    "url": "git+https://github.com/IIP-Design/corona-theme.git"
   },
   "author": "Office of Design, U.S. Department of State",
   "license": "GPL-2.0+",
   "bugs": {
-    "url": "https://github.com/IIP-Design/corona/issues"
+    "url": "https://github.com/IIP-Design/corona-theme/issues"
   },
-  "homepage": "https://github.com/IIP-Design/corona#readme",
+  "homepage": "https://github.com/IIP-Design/corona-theme#readme",
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "browser-sync": "^2.12.1",

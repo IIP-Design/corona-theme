@@ -114,6 +114,7 @@ function corona_require() {
   require_once TEMPLATE_DIR . '/lib/inc/shortcodes/class-corona-shortcode-post.php';
   require_once TEMPLATE_DIR . '/lib/inc/shortcodes/class-corona-shortcode-post-list.php';
   require_once TEMPLATE_DIR . '/lib/inc/shortcodes/class-corona-shortcode-cta.php';
+  require_once TEMPLATE_DIR . '/lib/inc/shortcodes/class-corona-shortcode-custom-button.php';
   require_once TEMPLATE_DIR . '/lib/inc/template-tags.php';
   require_once TEMPLATE_DIR . '/lib/inc/menus.php';
 

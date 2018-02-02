@@ -45,7 +45,7 @@ class TinyMce_Btn_Shortcode {
 
         add_action( "admin_head",               array ( $this, 'corona_localize_vars' ) );
         add_action( "admin_footer",             array ( $this, 'corona_get_shortcodes' ) );
-      
+
     }
 
     public function corona_register_buttons ( $buttons ) {
@@ -59,9 +59,10 @@ class TinyMce_Btn_Shortcode {
     }
 
     public function add_shortcode_to_menu (  $menu ) {
-        $menu['post_list'] = 'Post List';    // need to use underbars as opposed to dashed fto ensure js works properly 
+        $menu['post_list'] = 'Post List';    // need to use underbars as opposed to dashed fto ensure js works properly
         $menu['cta'] = 'Call To Action';
-            
+        $menu['custom_button'] = 'Custom Button';
+
         return $menu;
     }
     
@@ -71,7 +72,7 @@ class TinyMce_Btn_Shortcode {
         $menu = apply_filters( 'corona_add_menu_item', $menu );
 
         if( !empty($menu) ) {
-            
+
             echo '<script type="text/javascript">
             var menu = new Object();';
 
@@ -81,7 +82,7 @@ class TinyMce_Btn_Shortcode {
 
             echo '</script>';
         }
-       
+
     }
 
     public function corona_localize_vars () {
@@ -97,7 +98,7 @@ class TinyMce_Btn_Shortcode {
     }
 
 
-   
+
 } // end of  TinyMce_Btn_Shortcode
 
 

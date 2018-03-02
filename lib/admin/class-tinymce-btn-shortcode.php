@@ -59,13 +59,15 @@ class TinyMce_Btn_Shortcode {
     }
 
     public function add_shortcode_to_menu (  $menu ) {
-        $menu['post_list'] = 'Post List';    // need to use underbars as opposed to dashed fto ensure js works properly
-        $menu['cta'] = 'Call To Action';
+        $menu['cta'] = 'Call To Action'; // need to use underbars as opposed to dashed to ensure js works properly
+        $menu['course'] = 'Course';
         $menu['custom_button'] = 'Custom Button';
+        $menu['post_list'] = 'Post List';
+        $menu['screendoor'] = 'Screendoor';
 
         return $menu;
     }
-    
+
 
     public function corona_get_shortcodes () {
         $menu = array();

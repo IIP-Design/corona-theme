@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [v2.12.2](https://github.com/IIP-Design/corona-theme/tree/v2.12.2)
 
+**Changed:**
+- Moved documentation files into a docs directory at project root (previously in separate branch)
+
 **Security:**
 - Updated dependencies with security vulnerabilities
 

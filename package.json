@@ -34,22 +34,22 @@
   "homepage": "https://github.com/IIP-Design/corona-theme#readme",
   "devDependencies": {
     "autoprefixer": "^6.3.6",
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.7",
     "eslint": "^5.7.0",
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-jsx-a11y": "^0.6.2",
     "eslint-plugin-react": "^4.3.0",
-    "imagemin-cli": "^3.0.0",
-    "node-sass": "^4.9.4",
+    "imagemin-cli": "^5.1.0",
+    "node-sass": "^4.13.1",
     "node-sass-json-importer": "^4.1.0",
-    "onchange": "^2.3.0",
+    "onchange": "^6.1.0",
     "parallelshell": "^3.0.0",
-    "postcss-cli": "^2.5.1",
+    "postcss-cli": "^7.1.0",
     "uglify-js": "^2.6.2",
     "versionbump": "git+ssh://git@github.com/IIP-Design/versionbump.git"
   },
   "dependencies": {
-    "modernizr": "^3.6.0",
+    "modernizr": "^3.9.0",
     "normalize-css": "^2.3.1"
   }
 }

@@ -9,7 +9,7 @@
   "author": "Office of Design, U.S. Department of State",
   "license": "MIT",
   "devDependencies": {
-    "onchange": "^2.3.0",
+    "onchange": "^6.1.0",
     "uglify-js": "^2.4.10"
   }
 }

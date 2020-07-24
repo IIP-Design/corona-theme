@@ -8,7 +8,7 @@
     "autoprefixer": "postcss -m -u autoprefixer --autoprefixer.browsers '> 5%' styles.css -o styles.css",
     "css": "npm run sass && npm run autoprefixer",
     "uglify": "uglifyjs js/src/*.js -o js/dist/script.js",
-    "imagemin": "imagemin images/src/* images/dist",
+    "imagemin": "imagemin images/src/* -o images/dist",
     "jekyll": "bundle exec jekyll build",
     "jekyll:watch": "bundle exec jekyll build --watch",
     "server": "browser-sync start --server --index '_site/index.html' --serveStatic '_site' --files '_site/*'",
@@ -18,7 +18,7 @@
     "watch:jekyll": "onchange -v './styles.css' './images/dist/*' './js/dist/*' './**/*.html' './**/*.md' -e '_site/' -- npm run jekyll:watch",
     "watch": "parallelshell 'npm run server' 'npm run watch:css' 'npm run watch:js' 'npm run watch:image' 'npm run jekyll:watch'",
     "modernizr:dev": "node_modules/modernizr/bin/modernizr -c node_modules/modernizr/lib/config-all.json -d js/src/modernizr.dev.js",
-    "prod": "parallelshell 'npm run css' 'npm run uglify' 'npm run imagemin' 'npm run jekyll'"
+    "prod": "run-p 'css' 'uglify' 'imagemin' 'jekyll'"
   },
   "repository": {
     "type": "git",
@@ -36,8 +36,8 @@
     "imagemin-cli": "^6.0.0",
     "modernizr": "^3.9.0",
     "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
     "onchange": "^7.0.2",
-    "parallelshell": "^3.0.2",
     "postcss-cli": "^7.1.1",
     "uglify-js": "^3.10.0"
   },

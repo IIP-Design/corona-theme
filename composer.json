@@ -1,9 +1,9 @@
 {
-    "name": "iip-design/corona",
-    "description": "A Wordpress base theme",
-    "type": "wordpress-theme",
-    "license": "MIT",
-    "require": {
-        "composer/installers": "v1.0.21"
+  "name": "iip-design/corona",
+  "description": "A Wordpress base theme",
+  "type": "wordpress-theme",
+  "license": "MIT",
+  "require": {
+    "composer/installers": "v2.0.1"
   }
 }
